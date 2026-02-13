@@ -36,53 +36,49 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      {/* Top bar */}
-      <div className="hidden border-b border-border/30 bg-secondary/50 md:block">
-        <div className="container flex h-10 items-center justify-between">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Phone className="h-4 w-4 text-primary" />
-            <span>+7 (777) 123-45-67</span>
+      {/* Top banner with full-width logo */}
+      <div className="border-b border-border/30 bg-secondary/50">
+        <div className="container flex items-center justify-between py-2">
+          <Link to="/" className="flex items-center gap-4 flex-1 min-w-0">
+            <img src={logoImg} alt="СМЦ Актюбинской области" className="h-14 w-14 flex-shrink-0 object-contain md:h-20 md:w-20" />
+            <h1 className="font-display text-sm font-bold text-foreground leading-tight md:text-lg lg:text-xl uppercase tracking-wide">
+              Спортивный медицинский центр Актюбинской области
+            </h1>
+          </Link>
+          <div className="hidden md:flex items-center gap-4 flex-shrink-0">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Phone className="h-4 w-4 text-primary" />
+              <span>+7 (777) 123-45-67</span>
+            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="gap-2 text-sm">
+                  <span>{currentLang.flag}</span>
+                  <span>{currentLang.name}</span>
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {languages.map((lang) => (
+                  <DropdownMenuItem
+                    key={lang.code}
+                    onClick={() => setLanguage(lang.code)}
+                    className={cn(
+                      'gap-2 cursor-pointer',
+                      language === lang.code && 'bg-secondary'
+                    )}
+                  >
+                    <span>{lang.flag}</span>
+                    <span>{lang.name}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="gap-2 text-sm">
-                <span>{currentLang.flag}</span>
-                <span>{currentLang.name}</span>
-                <ChevronDown className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              {languages.map((lang) => (
-                <DropdownMenuItem
-                  key={lang.code}
-                  onClick={() => setLanguage(lang.code)}
-                  className={cn(
-                    'gap-2 cursor-pointer',
-                    language === lang.code && 'bg-secondary'
-                  )}
-                >
-                  <span>{lang.flag}</span>
-                  <span>{lang.name}</span>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
         </div>
       </div>
 
-      {/* Main header */}
-      <div className="container flex h-16 items-center justify-between md:h-20">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logoImg} alt="СМЦ Актюбинской области" className="h-10 w-10 rounded-lg object-contain md:h-12 md:w-12" />
-          <div className="hidden sm:block">
-            <h1 className="font-display text-sm font-semibold text-foreground leading-tight md:text-base max-w-[200px] md:max-w-[260px]">
-              Спортивный медицинский центр
-            </h1>
-            <p className="text-xs text-muted-foreground">Актюбинской области</p>
-          </div>
-        </Link>
-
+      <div className="container flex h-14 items-center justify-between">
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex lg:items-center lg:gap-1">
           {navLinks.map((link) => (
