@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send } from 'lucide-react';
+import logoImg from '@/assets/logo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export const Footer = () => {
@@ -12,12 +13,10 @@ export const Footer = () => {
           {/* About */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-hero">
-                <span className="text-xl font-bold text-primary-foreground">M</span>
-              </div>
+              <img src={logoImg} alt="СМЦ Актюбинской области" className="h-10 w-10 rounded-lg object-contain" />
               <div>
-                <h3 className="font-display text-lg font-semibold text-foreground">MediCare</h3>
-                <p className="text-xs text-muted-foreground">Medical Center</p>
+                <h3 className="font-display text-sm font-semibold text-foreground leading-tight">Спортивный медицинский центр</h3>
+                <p className="text-xs text-muted-foreground">Актюбинской области</p>
               </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -153,7 +152,7 @@ export const Footer = () => {
       <div className="border-t border-border">
         <div className="container flex flex-col items-center justify-between gap-4 py-6 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 MediCare. {t('footer.rights')}.
+            © 2024 СМЦ Актюбинской области. {t('footer.rights')}.
           </p>
           <div className="flex gap-6">
             <Link

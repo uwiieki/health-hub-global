@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
+import logoImg from '@/assets/logo.png';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -73,14 +74,12 @@ export const Header = () => {
       <div className="container flex h-16 items-center justify-between md:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-hero md:h-12 md:w-12">
-            <span className="text-xl font-bold text-primary-foreground md:text-2xl">M</span>
-          </div>
+          <img src={logoImg} alt="СМЦ Актюбинской области" className="h-10 w-10 rounded-lg object-contain md:h-12 md:w-12" />
           <div className="hidden sm:block">
-            <h1 className="font-display text-lg font-semibold text-foreground md:text-xl">
-              MediCare
+            <h1 className="font-display text-sm font-semibold text-foreground leading-tight md:text-base max-w-[200px] md:max-w-[260px]">
+              Спортивный медицинский центр
             </h1>
-            <p className="text-xs text-muted-foreground">Medical Center</p>
+            <p className="text-xs text-muted-foreground">Актюбинской области</p>
           </div>
         </Link>
 
