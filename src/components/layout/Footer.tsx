@@ -152,7 +152,7 @@ export const Footer = () => {
       <div className="border-t border-border">
         <div className="container flex flex-col items-center justify-between gap-4 py-6 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 СМЦ Актюбинской области. {t('footer.rights')}.
+            © 2026 СМЦ Актюбинской области. {t('footer.rights')}.
           </p>
           <div className="flex gap-6">
             <Link
