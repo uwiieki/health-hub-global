@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, ChevronDown } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown, Search } from 'lucide-react';
+import { SearchDialog } from '@/components/search/SearchDialog';
 import logoImg from '@/assets/logo.png';
 import { Button } from '@/components/ui/button';
 import {
@@ -20,6 +21,7 @@ const languages: { code: Language; name: string; flag: string }[] = [
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
@@ -97,15 +99,21 @@ export const Header = () => {
           ))}
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden items-center gap-4 lg:flex">
+        {/* CTA + Search */}
+        <div className="hidden items-center gap-2 lg:flex">
+          <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)} aria-label="Search">
+            <Search className="h-5 w-5" />
+          </Button>
           <Button className="bg-gradient-hero hover:opacity-90 transition-opacity">
             {t('nav.appointment')}
           </Button>
         </div>
 
         {/* Mobile menu button */}
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-1 lg:hidden">
+          <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)} aria-label="Search" className="h-9 w-9">
+            <Search className="h-5 w-5" />
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm" className="gap-1 px-2">
@@ -165,6 +173,8 @@ export const Header = () => {
           </nav>
         </div>
       )}
+
+      <SearchDialog open={isSearchOpen} onOpenChange={setIsSearchOpen} />
     </header>
   );
 };
