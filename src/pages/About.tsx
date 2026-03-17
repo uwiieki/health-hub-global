@@ -1,7 +1,8 @@
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Award, Users, Target, Heart, Building } from 'lucide-react';
+import { Shield, Award, Users, Target, Heart, Building, User } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const values = [
   { icon: Heart, titleRu: 'Забота о пациентах', titleKz: 'Науқастарға қамқорлық', titleEn: 'Patient Care', descRu: 'Каждый пациент для нас уникален', descKz: 'Әр науқас біз үшін бірегей', descEn: 'Every patient is unique to us' },
