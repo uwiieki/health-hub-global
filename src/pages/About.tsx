@@ -1,7 +1,26 @@
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Award, Users, Target, Heart, Building } from 'lucide-react';
+import { Shield, Award, Users, Target, Heart, Building, User } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
+const leadership = [
+  {
+    role: { ru: 'Директор', kz: 'Директор', en: 'Director' },
+    name: { ru: 'Иванов Сергей Александрович', kz: 'Иванов Сергей Александрович', en: 'Sergey A. Ivanov' },
+    desc: { ru: 'Доктор медицинских наук, заслуженный врач РК. Более 25 лет опыта в управлении медицинскими учреждениями.', kz: 'Медицина ғылымдарының докторы, ҚР құрметті дәрігері. Медициналық мекемелерді басқаруда 25 жылдан астам тәжірибе.', en: 'Doctor of Medical Sciences, Honored Physician of RK. Over 25 years of experience in healthcare management.' },
+  },
+  {
+    role: { ru: 'Заместитель директора по лечебной работе', kz: 'Емдеу жұмысы бойынша директордың орынбасары', en: 'Deputy Director for Clinical Work' },
+    name: { ru: 'Петрова Анна Викторовна', kz: 'Петрова Анна Викторовна', en: 'Anna V. Petrova' },
+    desc: { ru: 'Кандидат медицинских наук, врач высшей категории. Специализация — внутренние болезни и кардиология.', kz: 'Медицина ғылымдарының кандидаты, жоғары санатты дәрігер. Мамандануы — ішкі аурулар мен кардиология.', en: 'Candidate of Medical Sciences, highest category physician. Specialization — internal medicine and cardiology.' },
+  },
+  {
+    role: { ru: 'Заместитель директора по организационной работе', kz: 'Ұйымдастыру жұмысы бойынша директордың орынбасары', en: 'Deputy Director for Organizational Work' },
+    name: { ru: 'Казыбеков Ерлан Нурланович', kz: 'Қазыбеков Ерлан Нұрланұлы', en: 'Yerlan N. Kazybekov' },
+    desc: { ru: 'Магистр общественного здравоохранения. Более 15 лет опыта в организации здравоохранения.', kz: 'Қоғамдық денсаулық сақтау магистрі. Денсаулық сақтауды ұйымдастыруда 15 жылдан астам тәжірибе.', en: 'Master of Public Health. Over 15 years of experience in healthcare organization.' },
+  },
+];
 
 const values = [
   { icon: Heart, titleRu: 'Забота о пациентах', titleKz: 'Науқастарға қамқорлық', titleEn: 'Patient Care', descRu: 'Каждый пациент для нас уникален', descKz: 'Әр науқас біз үшін бірегей', descEn: 'Every patient is unique to us' },
@@ -125,6 +144,35 @@ const About = () => {
                     </h3>
                     <p className="text-sm text-muted-foreground">
                       {getDesc(value)}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Leadership */}
+          <div className="mb-16">
+            <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
+              {c.leadershipTitle}
+            </h2>
+            <div className="grid gap-8 lg:grid-cols-3">
+              {leadership.map((person, index) => (
+                <Card key={index} className="border-border/50 bg-card overflow-hidden">
+                  <CardContent className="p-8 text-center">
+                    <Avatar className="h-24 w-24 mx-auto mb-6">
+                      <AvatarFallback className="bg-primary/10 text-primary text-2xl font-bold">
+                        <User className="h-10 w-10" />
+                      </AvatarFallback>
+                    </Avatar>
+                    <p className="text-sm font-medium text-primary mb-2">
+                      {language === 'kz' ? person.role.kz : language === 'en' ? person.role.en : person.role.ru}
+                    </p>
+                    <h3 className="font-display text-xl font-bold text-foreground mb-3">
+                      {language === 'kz' ? person.name.kz : language === 'en' ? person.name.en : person.name.ru}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {language === 'kz' ? person.desc.kz : language === 'en' ? person.desc.en : person.desc.ru}
                     </p>
                   </CardContent>
                 </Card>
