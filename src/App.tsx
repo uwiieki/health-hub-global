@@ -11,6 +11,7 @@ import Doctors from "./pages/Doctors";
 import News from "./pages/News";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
+import LegalActs from "./pages/LegalActs";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./components/admin/AdminLayout";
@@ -37,6 +38,7 @@ const App = () => (
               <Route path="/news" element={<News />} />
               <Route path="/about" element={<About />} />
               <Route path="/contacts" element={<Contacts />} />
+              <Route path="/legal-acts" element={<LegalActs />} />
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin" element={<AdminLayout />}>
                 <Route index element={<Dashboard />} />

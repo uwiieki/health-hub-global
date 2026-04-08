@@ -17,6 +17,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.news': 'Новости',
     'nav.about': 'О нас',
     'nav.contacts': 'Контакты',
+    'nav.legalActs': 'Нормативно-правовые акты',
     'nav.appointment': 'Записаться',
     
     // Hero
@@ -80,6 +81,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.news': 'Жаңалықтар',
     'nav.about': 'Біз туралы',
     'nav.contacts': 'Байланыс',
+    'nav.legalActs': 'Нормативтік-құқықтық актілер',
     'nav.appointment': 'Жазылу',
     
     // Hero
@@ -143,6 +145,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.news': 'News',
     'nav.about': 'About',
     'nav.contacts': 'Contacts',
+    'nav.legalActs': 'Legal Acts',
     'nav.appointment': 'Book Now',
     
     // Hero
