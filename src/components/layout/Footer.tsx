@@ -13,9 +13,9 @@ export const Footer = () => {
           {/* About */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <img src={logoImg} alt="СМЦ Актюбинской области" className="h-10 w-10 rounded-lg object-contain" />
+              <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-10 w-10 rounded-lg object-contain" />
               <div>
-                <h3 className="font-display text-sm font-semibold text-foreground leading-tight">Спортивный медицинский центр</h3>
+                <h3 className="font-display text-sm font-semibold text-foreground leading-tight">Центр спортивной медицины</h3>
                 <p className="text-xs text-muted-foreground">Актюбинской области</p>
               </div>
             </Link>
@@ -152,7 +152,7 @@ export const Footer = () => {
       <div className="border-t border-border">
         <div className="container flex flex-col items-center justify-between gap-4 py-6 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2026 СМЦ Актюбинской области. {t('footer.rights')}.
+            © 2026 ЦСМ Актюбинской области. {t('footer.rights')}.
           </p>
           <div className="flex gap-6">
             <Link

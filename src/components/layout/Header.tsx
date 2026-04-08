@@ -43,9 +43,9 @@ export const Header = () => {
       <div className="border-b border-border/30 bg-secondary/50">
         <div className="container flex items-center justify-between py-2">
           <Link to="/" className="flex items-center gap-4 flex-1 min-w-0">
-            <img src={logoImg} alt="СМЦ Актюбинской области" className="h-14 w-14 flex-shrink-0 object-contain md:h-20 md:w-20" />
+            <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-14 w-14 flex-shrink-0 object-contain md:h-20 md:w-20" />
             <h1 className="font-display text-sm font-bold text-foreground leading-tight md:text-lg lg:text-xl uppercase tracking-wide">
-              Спортивный медицинский центр Актюбинской области
+              Центр спортивной медицины Актюбинской области
             </h1>
           </Link>
           <div className="hidden md:flex items-center gap-4 flex-shrink-0">
