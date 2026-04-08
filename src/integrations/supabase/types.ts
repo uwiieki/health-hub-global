@@ -74,6 +74,45 @@ export type Database = {
         }
         Relationships: []
       }
+      legal_acts: {
+        Row: {
+          adoption_date: string
+          created_at: string
+          document_number: string
+          document_url: string | null
+          id: string
+          status: string
+          title_en: string
+          title_kz: string
+          title_ru: string
+          updated_at: string
+        }
+        Insert: {
+          adoption_date?: string
+          created_at?: string
+          document_number?: string
+          document_url?: string | null
+          id?: string
+          status?: string
+          title_en?: string
+          title_kz?: string
+          title_ru?: string
+          updated_at?: string
+        }
+        Update: {
+          adoption_date?: string
+          created_at?: string
+          document_number?: string
+          document_url?: string | null
+          id?: string
+          status?: string
+          title_en?: string
+          title_kz?: string
+          title_ru?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       news: {
         Row: {
           category: string
