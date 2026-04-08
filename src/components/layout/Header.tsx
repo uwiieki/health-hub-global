@@ -32,6 +32,7 @@ export const Header = () => {
     { href: '/news', label: t('nav.news') },
     { href: '/about', label: t('nav.about') },
     { href: '/contacts', label: t('nav.contacts') },
+    { href: '/legal-acts', label: t('nav.legalActs') },
   ];
 
   const currentLang = languages.find((l) => l.code === language) || languages[0];
