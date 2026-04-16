@@ -11,7 +11,7 @@ const contactInfo = [
   {
     icon: MapPin,
     labelKey: 'contact.address',
-    value: 'г. Алматы, ул. Абая 150, офис 25',
+    value: 'г. Актобе, ул. Спортивная 1',
   },
   {
     icon: Phone,
