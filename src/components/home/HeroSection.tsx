@@ -1,4 +1,4 @@
-import { ArrowRight, Play, Shield, Clock, Users, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Play, Shield, Clock, Users, Calendar, ChevronLeft, ChevronRight, Stethoscope, UserCheck, FileText, Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState, useCallback } from 'react';
@@ -13,31 +13,90 @@ interface NewsItem {
   category: string; publish_date: string;
 }
 
+interface CarouselSlide {
+  type: 'page' | 'news';
+  id: string;
+  title: string;
+  description: string;
+  link: string;
+  linkLabel: string;
+  icon: React.ReactNode;
+  bgGradient: string;
+  imageUrl?: string | null;
+  badge?: string;
+  date?: string;
+}
+
 export const HeroSection = () => {
   const { t, language } = useLanguage();
   const [news, setNews] = useState<NewsItem[]>([]);
   const [current, setCurrent] = useState(0);
+  const [slides, setSlides] = useState<CarouselSlide[]>([]);
 
   useEffect(() => {
-    supabase.from('news').select('*').eq('status', 'published').order('publish_date', { ascending: false }).limit(5)
-      .then(({ data }) => { if (data && data.length > 0) setNews(data as NewsItem[]); });
+    supabase.from('news').select('*').eq('status', 'published').order('publish_date', { ascending: false }).limit(3)
+      .then(({ data }) => { if (data) setNews(data as NewsItem[]); });
   }, []);
-
-  const next = useCallback(() => setCurrent(i => (i + 1) % Math.max(news.length, 1)), [news.length]);
-  const prev = useCallback(() => setCurrent(i => (i - 1 + news.length) % Math.max(news.length, 1)), [news.length]);
-
-  useEffect(() => {
-    if (news.length <= 1) return;
-    const interval = setInterval(next, 5000);
-    return () => clearInterval(interval);
-  }, [news.length, next]);
 
   const getTitle = (n: NewsItem) => language === 'kz' ? n.title_kz : language === 'en' ? n.title_en : n.title_ru;
   const getExcerpt = (n: NewsItem) => {
     const c = language === 'kz' ? n.content_kz : language === 'en' ? n.content_en : n.content_ru;
-    return c?.substring(0, 200) || '';
+    return c?.substring(0, 150) || '';
   };
   const formatDate = (d: string) => new Date(d).toLocaleDateString(language === 'en' ? 'en-US' : language === 'kz' ? 'kk-KZ' : 'ru-RU', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  useEffect(() => {
+    const pageSlides: CarouselSlide[] = [
+      {
+        type: 'page', id: 'services',
+        title: language === 'kz' ? 'Біздің қызметтер' : language === 'en' ? 'Our Services' : 'Наши услуги',
+        description: language === 'kz' ? 'Спорттық медицина, диагностика, реабилитация және басқа да қызметтер' : language === 'en' ? 'Sports medicine, diagnostics, rehabilitation and more' : 'Спортивная медицина, диагностика, реабилитация и другие услуги',
+        link: '/services', linkLabel: language === 'kz' ? 'Қызметтерге өту' : language === 'en' ? 'View Services' : 'Перейти к услугам',
+        icon: <Stethoscope className="h-8 w-8" />,
+        bgGradient: 'from-primary/20 via-primary/5 to-transparent',
+      },
+      {
+        type: 'page', id: 'doctors',
+        title: language === 'kz' ? 'Біздің дәрігерлер' : language === 'en' ? 'Our Doctors' : 'Наши врачи',
+        description: language === 'kz' ? 'Тәжірибелі мамандар тобы сіздің денсаулығыңыз үшін' : language === 'en' ? 'Experienced specialists dedicated to your health' : 'Команда опытных специалистов для вашего здоровья',
+        link: '/doctors', linkLabel: language === 'kz' ? 'Дәрігерлерді көру' : language === 'en' ? 'Meet Doctors' : 'Познакомиться с врачами',
+        icon: <UserCheck className="h-8 w-8" />,
+        bgGradient: 'from-mint/20 via-mint/5 to-transparent',
+      },
+      {
+        type: 'page', id: 'legal-acts',
+        title: language === 'kz' ? 'Нормативтік-құқықтық актілер' : language === 'en' ? 'Legal Acts' : 'Нормативно-правовые акты',
+        description: language === 'kz' ? 'Заңнамалық құжаттар мен нормативтік актілер' : language === 'en' ? 'Legislative documents and regulatory acts' : 'Законодательные документы и нормативные акты',
+        link: '/legal-acts', linkLabel: language === 'kz' ? 'НҚА қарау' : language === 'en' ? 'View Legal Acts' : 'Смотреть НПА',
+        icon: <FileText className="h-8 w-8" />,
+        bgGradient: 'from-coral/20 via-coral/5 to-transparent',
+      },
+    ];
+
+    const newsSlides: CarouselSlide[] = news.map((item) => ({
+      type: 'news' as const, id: item.id,
+      title: getTitle(item),
+      description: getExcerpt(item),
+      link: '/news', linkLabel: language === 'kz' ? 'Толығырақ' : language === 'en' ? 'Read more' : 'Подробнее',
+      icon: <Newspaper className="h-8 w-8" />,
+      bgGradient: 'from-primary/10 via-transparent to-transparent',
+      imageUrl: item.cover_image_url,
+      badge: item.category,
+      date: formatDate(item.publish_date),
+    }));
+
+    setSlides([...pageSlides, ...newsSlides]);
+  }, [news, language]);
+
+  const total = slides.length;
+  const next = useCallback(() => setCurrent(i => (i + 1) % Math.max(total, 1)), [total]);
+  const prev = useCallback(() => setCurrent(i => (i - 1 + total) % Math.max(total, 1)), [total]);
+
+  useEffect(() => {
+    if (total <= 1) return;
+    const interval = setInterval(next, 5000);
+    return () => clearInterval(interval);
+  }, [total, next]);
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-background to-mint-light">
@@ -107,35 +166,45 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* News Carousel */}
+          {/* Carousel */}
           <div className="relative animate-fade-in lg:animate-slide-in-right">
-            <div className="relative overflow-hidden rounded-2xl bg-card border border-border/50 shadow-xl min-h-[380px]">
-              {news.length > 0 ? (
+            <div className="relative overflow-hidden rounded-2xl bg-card border border-border/50 shadow-xl min-h-[400px]">
+              {slides.length > 0 ? (
                 <>
                   <div className="relative h-full">
-                    {news.map((item, idx) => (
+                    {slides.map((slide, idx) => (
                       <div
-                        key={item.id}
+                        key={slide.id}
                         className={`absolute inset-0 transition-all duration-500 ease-in-out ${
                           idx === current ? 'opacity-100 translate-x-0' : idx < current ? 'opacity-0 -translate-x-full' : 'opacity-0 translate-x-full'
                         }`}
                       >
-                        {item.cover_image_url && (
-                          <div className="h-48 overflow-hidden">
-                            <img src={item.cover_image_url} alt={getTitle(item)} className="h-full w-full object-cover" />
+                        {slide.type === 'news' && slide.imageUrl ? (
+                          <div className="h-44 overflow-hidden">
+                            <img src={slide.imageUrl} alt={slide.title} className="h-full w-full object-cover" />
+                          </div>
+                        ) : (
+                          <div className={`h-44 bg-gradient-to-br ${slide.bgGradient} flex items-center justify-center`}>
+                            <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-background/80 backdrop-blur text-primary shadow-lg">
+                              {slide.icon}
+                            </div>
                           </div>
                         )}
                         <div className="p-6">
-                          <div className="mb-2 flex items-center gap-2">
-                            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{item.category}</span>
-                            <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                              <Calendar className="h-3 w-3" />{formatDate(item.publish_date)}
+                          <div className="mb-2 flex items-center gap-2 flex-wrap">
+                            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                              {slide.type === 'news' ? slide.badge : (slide.type === 'page' ? (language === 'kz' ? 'Бет' : language === 'en' ? 'Page' : 'Раздел') : '')}
                             </span>
+                            {slide.date && (
+                              <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <Calendar className="h-3 w-3" />{slide.date}
+                              </span>
+                            )}
                           </div>
-                          <h3 className="font-display text-xl font-bold text-foreground mb-2 line-clamp-2">{getTitle(item)}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{getExcerpt(item)}...</p>
-                          <Link to="/news" className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
-                            {t('news.readMore')} <ArrowRight className="h-4 w-4" />
+                          <h3 className="font-display text-xl font-bold text-foreground mb-2 line-clamp-2">{slide.title}</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{slide.description}</p>
+                          <Link to={slide.link} className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                            {slide.linkLabel} <ArrowRight className="h-4 w-4" />
                           </Link>
                         </div>
                       </div>
@@ -143,7 +212,7 @@ export const HeroSection = () => {
                   </div>
 
                   {/* Controls */}
-                  {news.length > 1 && (
+                  {slides.length > 1 && (
                     <>
                       <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-background/80 backdrop-blur shadow hover:bg-background transition-colors">
                         <ChevronLeft className="h-4 w-4 text-foreground" />
@@ -152,9 +221,8 @@ export const HeroSection = () => {
                         <ChevronRight className="h-4 w-4 text-foreground" />
                       </button>
 
-                      {/* Dots */}
                       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                        {news.map((_, idx) => (
+                        {slides.map((_, idx) => (
                           <button
                             key={idx}
                             onClick={() => setCurrent(idx)}
@@ -169,7 +237,7 @@ export const HeroSection = () => {
                 <div className="flex h-full items-center justify-center p-12">
                   <div className="text-center">
                     <Shield className="mx-auto h-12 w-12 text-primary/30 mb-4" />
-                    <p className="text-muted-foreground">{language === 'en' ? 'No news yet' : language === 'kz' ? 'Жаңалықтар жоқ' : 'Новостей пока нет'}</p>
+                    <p className="text-muted-foreground">{language === 'en' ? 'Loading...' : language === 'kz' ? 'Жүктелуде...' : 'Загрузка...'}</p>
                   </div>
                 </div>
               )}
