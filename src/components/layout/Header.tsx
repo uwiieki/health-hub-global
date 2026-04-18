@@ -45,10 +45,10 @@ export const Header = () => {
       <div className="border-b border-border/30 bg-secondary/50">
         <div className="container flex items-center justify-between py-2">
           <Link to="/" className="flex items-center gap-3 flex-1 min-w-0">
-            <div className="flex items-center gap-2 flex-shrink-0">
-              <img src={logoAktobe} alt="Ақтөбе облысы" className="h-12 w-12 object-contain md:h-16 md:w-16" />
-              <img src={logoSport} alt="Управление спорта и туризма" className="h-12 w-12 object-contain md:h-16 md:w-16" />
-              <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-12 w-12 object-contain md:h-16 md:w-16" />
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <img src={logoAktobe} alt="Ақтөбе облысы" className="h-14 w-14 md:h-16 md:w-16 object-contain" />
+              <img src={logoSport} alt="Управление спорта и туризма" className="h-14 w-14 md:h-16 md:w-16 object-contain" />
+              <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-14 w-14 md:h-16 md:w-16 object-contain" />
             </div>
             <h1 className="font-display text-xs font-bold text-foreground leading-tight md:text-base lg:text-lg uppercase tracking-wide">
               Центр спортивной медицины Актюбинской области
