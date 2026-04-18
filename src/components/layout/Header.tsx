@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, ChevronDown, Search } from 'lucide-react';
 import { SearchDialog } from '@/components/search/SearchDialog';
 import logoImg from '@/assets/logo.png';
+import logoAktobe from '@/assets/logo-aktobe.png';
+import logoSport from '@/assets/logo-sport.png';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -42,9 +44,13 @@ export const Header = () => {
       {/* Top banner with full-width logo */}
       <div className="border-b border-border/30 bg-secondary/50">
         <div className="container flex items-center justify-between py-2">
-          <Link to="/" className="flex items-center gap-4 flex-1 min-w-0">
-            <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-14 w-14 flex-shrink-0 object-contain md:h-20 md:w-20" />
-            <h1 className="font-display text-sm font-bold text-foreground leading-tight md:text-lg lg:text-xl uppercase tracking-wide">
+          <Link to="/" className="flex items-center gap-3 flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <img src={logoAktobe} alt="Ақтөбе облысы" className="h-12 w-12 object-contain md:h-16 md:w-16" />
+              <img src={logoSport} alt="Управление спорта и туризма" className="h-12 w-12 object-contain md:h-16 md:w-16" />
+              <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-12 w-12 object-contain md:h-16 md:w-16" />
+            </div>
+            <h1 className="font-display text-xs font-bold text-foreground leading-tight md:text-base lg:text-lg uppercase tracking-wide">
               Центр спортивной медицины Актюбинской области
             </h1>
           </Link>
