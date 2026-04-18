@@ -4,7 +4,7 @@ import logoImg from '@/assets/logo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export const Footer = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="border-t border-border bg-secondary/30">
@@ -15,7 +15,7 @@ export const Footer = () => {
             <Link to="/" className="flex items-center gap-3">
               <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-10 w-10 rounded-lg object-contain" />
               <div>
-                <h3 className="font-display text-sm font-semibold text-foreground leading-tight">{t('org.short')}</h3>
+                <h3 className={`font-display text-sm text-foreground leading-tight ${language === 'kz' ? 'font-medium' : 'font-semibold'}`}>{t('org.short')}</h3>
                 <p className="text-xs text-muted-foreground">{t('org.region')}</p>
               </div>
             </Link>
