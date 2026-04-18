@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send, Music2 } from 'lucide-react';
 import logoImg from '@/assets/logo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -40,6 +40,13 @@ export const Footer = () => {
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <Send className="h-5 w-5" />
+              </a>
+              <a
+                href="#"
+                aria-label="TikTok"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <Music2 className="h-5 w-5" />
               </a>
             </div>
           </div>
