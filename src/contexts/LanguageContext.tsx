@@ -176,9 +176,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.learnMore': 'Learn More',
     
     // Doctors
-    'doctors.title': 'Our Doctors',
+    'doctors.title': 'Our Specialists',
     'doctors.subtitle': 'Experienced specialists caring for your health',
-    'doctors.viewAll': 'View All Doctors',
+    'doctors.viewAll': 'View All Specialists',
     'doctors.experience': 'years experience',
     
     // News
