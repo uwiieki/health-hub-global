@@ -147,7 +147,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Home',
     'nav.services': 'Services',
-    'nav.doctors': 'Doctors',
+    'nav.doctors': 'Specialists',
     'nav.news': 'News',
     'nav.about': 'About',
     'nav.contacts': 'Contacts',
