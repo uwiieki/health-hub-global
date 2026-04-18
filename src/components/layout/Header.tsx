@@ -51,7 +51,7 @@ export const Header = () => {
               <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-14 w-14 md:h-16 md:w-16 object-contain" />
             </div>
             <h1 className="font-display text-xs font-bold text-foreground leading-tight md:text-base lg:text-lg uppercase tracking-wide">
-              Центр спортивной медицины Актюбинской области
+              {t('org.name')}
             </h1>
           </Link>
           <div className="hidden md:flex items-center gap-4 flex-shrink-0">

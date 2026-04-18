@@ -19,6 +19,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.contacts': 'Контакты',
     'nav.legalActs': 'Нормативно-правовые акты',
     'nav.appointment': 'Записаться',
+    'org.name': 'Центр спортивной медицины Актюбинской области',
+    'org.short': 'Центр спортивной медицины',
+    'org.region': 'Актюбинской области',
     
     // Hero
     'hero.title': 'Ваше здоровье — наша забота',
@@ -83,6 +86,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.contacts': 'Байланыс',
     'nav.legalActs': 'Нормативтік-құқықтық актілер',
     'nav.appointment': 'Жазылу',
+    'org.name': 'Ақтөбе облысының спорттық медицина орталығы',
+    'org.short': 'Спорттық медицина орталығы',
+    'org.region': 'Ақтөбе облысының',
     
     // Hero
     'hero.title': 'Сіздің денсаулығыңыз — біздің қамқорлығымыз',
@@ -147,6 +153,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.contacts': 'Contacts',
     'nav.legalActs': 'Legal Acts',
     'nav.appointment': 'Book Now',
+    'org.name': 'Aktobe Region Sports Medicine Center',
+    'org.short': 'Sports Medicine Center',
+    'org.region': 'Aktobe Region',
     
     // Hero
     'hero.title': 'Your Health is Our Priority',

@@ -15,8 +15,8 @@ export const Footer = () => {
             <Link to="/" className="flex items-center gap-3">
               <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-10 w-10 rounded-lg object-contain" />
               <div>
-                <h3 className="font-display text-sm font-semibold text-foreground leading-tight">Центр спортивной медицины</h3>
-                <p className="text-xs text-muted-foreground">Актюбинской области</p>
+                <h3 className="font-display text-sm font-semibold text-foreground leading-tight">{t('org.short')}</h3>
+                <p className="text-xs text-muted-foreground">{t('org.region')}</p>
               </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
