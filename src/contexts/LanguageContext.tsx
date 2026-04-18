@@ -13,7 +13,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Главная',
     'nav.services': 'Услуги',
-    'nav.doctors': 'Врачи',
+    'nav.doctors': 'Специалисты',
     'nav.news': 'Новости',
     'nav.about': 'О нас',
     'nav.contacts': 'Контакты',
@@ -42,9 +42,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.learnMore': 'Подробнее',
     
     // Doctors
-    'doctors.title': 'Наши врачи',
+    'doctors.title': 'Наши специалисты',
     'doctors.subtitle': 'Опытные специалисты заботятся о вашем здоровье',
-    'doctors.viewAll': 'Все врачи',
+    'doctors.viewAll': 'Все специалисты',
     'doctors.experience': 'лет опыта',
     
     // News
@@ -80,7 +80,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Басты бет',
     'nav.services': 'Қызметтер',
-    'nav.doctors': 'Дәрігерлер',
+    'nav.doctors': 'Мамандар',
     'nav.news': 'Жаңалықтар',
     'nav.about': 'Біз туралы',
     'nav.contacts': 'Байланыс',
@@ -109,9 +109,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.learnMore': 'Толығырақ',
     
     // Doctors
-    'doctors.title': 'Біздің дәрігерлер',
+    'doctors.title': 'Біздің мамандарымыз',
     'doctors.subtitle': 'Тәжірибелі мамандар сіздің денсаулығыңызға қамқорлық жасайды',
-    'doctors.viewAll': 'Барлық дәрігерлер',
+    'doctors.viewAll': 'Барлық мамандар',
     'doctors.experience': 'жыл тәжірибе',
     
     // News
@@ -147,7 +147,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Home',
     'nav.services': 'Services',
-    'nav.doctors': 'Doctors',
+    'nav.doctors': 'Specialists',
     'nav.news': 'News',
     'nav.about': 'About',
     'nav.contacts': 'Contacts',
@@ -176,9 +176,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.learnMore': 'Learn More',
     
     // Doctors
-    'doctors.title': 'Our Doctors',
+    'doctors.title': 'Our Specialists',
     'doctors.subtitle': 'Experienced specialists caring for your health',
-    'doctors.viewAll': 'View All Doctors',
+    'doctors.viewAll': 'View All Specialists',
     'doctors.experience': 'years experience',
     
     // News
