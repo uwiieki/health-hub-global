@@ -29,12 +29,12 @@ export const Header = () => {
 
   const navLinks = [
     { href: '/', label: t('nav.home') },
-    { href: '/services', label: t('nav.services') },
-    { href: '/doctors', label: t('nav.doctors') },
     { href: '/news', label: t('nav.news') },
-    { href: '/about', label: t('nav.about') },
-    { href: '/contacts', label: t('nav.contacts') },
+    { href: '/doctors', label: t('nav.doctors') },
+    { href: '/services', label: t('nav.services') },
     { href: '/legal-acts', label: t('nav.legalActs') },
+    { href: '/contacts', label: t('nav.contacts') },
+    { href: '/about', label: t('nav.about') },
   ];
 
   const currentLang = languages.find((l) => l.code === language) || languages[0];
@@ -51,7 +51,7 @@ export const Header = () => {
               <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-14 w-14 md:h-16 md:w-16 object-contain" />
             </div>
             <h1 className="font-display text-xs font-bold text-foreground leading-tight md:text-base lg:text-lg uppercase tracking-wide">
-              Центр спортивной медицины Актюбинской области
+              {t('org.name')}
             </h1>
           </Link>
           <div className="hidden md:flex items-center gap-4 flex-shrink-0">
