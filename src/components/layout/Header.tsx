@@ -29,12 +29,12 @@ export const Header = () => {
 
   const navLinks = [
     { href: '/', label: t('nav.home') },
-    { href: '/services', label: t('nav.services') },
-    { href: '/doctors', label: t('nav.doctors') },
     { href: '/news', label: t('nav.news') },
-    { href: '/about', label: t('nav.about') },
-    { href: '/contacts', label: t('nav.contacts') },
+    { href: '/doctors', label: t('nav.doctors') },
+    { href: '/services', label: t('nav.services') },
     { href: '/legal-acts', label: t('nav.legalActs') },
+    { href: '/contacts', label: t('nav.contacts') },
+    { href: '/about', label: t('nav.about') },
   ];
 
   const currentLang = languages.find((l) => l.code === language) || languages[0];
