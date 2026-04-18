@@ -109,9 +109,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.learnMore': 'Толығырақ',
     
     // Doctors
-    'doctors.title': 'Біздің дәрігерлер',
+    'doctors.title': 'Біздің мамандарымыз',
     'doctors.subtitle': 'Тәжірибелі мамандар сіздің денсаулығыңызға қамқорлық жасайды',
-    'doctors.viewAll': 'Барлық дәрігерлер',
+    'doctors.viewAll': 'Барлық мамандар',
     'doctors.experience': 'жыл тәжірибе',
     
     // News
