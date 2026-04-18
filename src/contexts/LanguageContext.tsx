@@ -42,9 +42,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.learnMore': 'Подробнее',
     
     // Doctors
-    'doctors.title': 'Наши врачи',
+    'doctors.title': 'Наши специалисты',
     'doctors.subtitle': 'Опытные специалисты заботятся о вашем здоровье',
-    'doctors.viewAll': 'Все врачи',
+    'doctors.viewAll': 'Все специалисты',
     'doctors.experience': 'лет опыта',
     
     // News
