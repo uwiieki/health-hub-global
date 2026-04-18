@@ -80,7 +80,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Басты бет',
     'nav.services': 'Қызметтер',
-    'nav.doctors': 'Дәрігерлер',
+    'nav.doctors': 'Мамандар',
     'nav.news': 'Жаңалықтар',
     'nav.about': 'Біз туралы',
     'nav.contacts': 'Байланыс',
