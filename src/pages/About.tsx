@@ -60,16 +60,14 @@ const About = () => {
       historyText: 'Медицинский центр MediCare был основан в 2009 году группой опытных врачей, объединенных идеей создания клиники нового поколения. За 15 лет работы мы выросли из небольшого медицинского кабинета в современный многопрофильный центр с более чем 50 специалистами.',
       missionTitle: 'Наша миссия',
       missionText: 'Предоставлять качественную, доступную и современную медицинскую помощь, используя передовые технологии и индивидуальный подход к каждому пациенту.',
-      valuesTitle: 'Наши ценности',
       achievementsTitle: 'Достижения и сертификаты',
       leadershipTitle: 'Руководство',
     },
     kz: {
       historyTitle: 'Клиника тарихы',
       historyText: 'MediCare медициналық орталығы 2009 жылы жаңа буын клиникасын құру идеясымен біріккен тәжірибелі дәрігерлер тобы құрды. 15 жыл жұмыс істеу барысында біз шағын медициналық кабинеттен 50-ден астам маманы бар заманауи көп бейінді орталыққа айналдық.',
-      missionTitle: 'Біздің миссия',
+      missionTitle: 'Біздің миссиямыз',
       missionText: 'Озық технологияларды және әр науқасқа жеке көзқарасты қолдана отырып, сапалы, қолжетімді және заманауи медициналық көмек көрсету.',
-      valuesTitle: 'Біздің құндылықтар',
       achievementsTitle: 'Жетістіктер мен сертификаттар',
       leadershipTitle: 'Басшылық',
     },
@@ -78,7 +76,6 @@ const About = () => {
       historyText: 'MediCare Medical Center was founded in 2009 by a group of experienced doctors united by the idea of creating a new generation clinic. Over 15 years of work, we have grown from a small medical office into a modern multidisciplinary center with more than 50 specialists.',
       missionTitle: 'Our Mission',
       missionText: 'To provide quality, accessible and modern medical care using advanced technologies and an individual approach to each patient.',
-      valuesTitle: 'Our Values',
       achievementsTitle: 'Achievements and Certificates',
       leadershipTitle: 'Leadership',
     },
@@ -125,30 +122,6 @@ const About = () => {
                 </p>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Values */}
-          <div className="mb-16">
-            <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
-              {c.valuesTitle}
-            </h2>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {values.map((value, index) => (
-                <Card key={index} className="border-border/50 bg-card text-center">
-                  <CardContent className="p-6">
-                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                      <value.icon className="h-7 w-7 text-primary" />
-                    </div>
-                    <h3 className="font-display text-lg font-semibold text-foreground mb-2">
-                      {getTitle(value)}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {getDesc(value)}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           </div>
 
           {/* Leadership */}
