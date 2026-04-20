@@ -8,15 +8,14 @@ import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 
-const contactInfo = [
-  { icon: MapPin, labelKey: 'contact.address', value: 'г. Алматы, ул. Абая 150, офис 25' },
-  { icon: Phone, labelKey: 'contact.phone', value: '+7 (777) 123-45-67', href: 'tel:+77771234567' },
-  { icon: Mail, labelKey: 'contact.email', value: 'info@medicare.kz', href: 'mailto:info@medicare.kz' },
-  { icon: Clock, labelKey: 'contact.hours', value: 'Пн-Пт: 08:00-20:00, Сб: 09:00-18:00' },
-];
-
 const Contacts = () => {
   const { t } = useLanguage();
+  const contactInfo = [
+    { icon: MapPin, labelKey: 'contact.address', value: t('contact.address.value') },
+    { icon: Phone, labelKey: 'contact.phone', value: '+7 (777) 123-45-67', href: 'tel:+77771234567' },
+    { icon: Mail, labelKey: 'contact.email', value: 'info@medicare.kz', href: 'mailto:info@medicare.kz' },
+    { icon: Clock, labelKey: 'contact.hours', value: t('contact.hours.value') },
+  ];
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,8 +26,8 @@ const Contacts = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: 'Сообщение отправлено',
-      description: 'Мы свяжемся с вами в ближайшее время.',
+      title: t('contact.toast.title'),
+      description: t('contact.toast.desc'),
     });
     setFormData({ name: '', email: '', phone: '', message: '' });
   };

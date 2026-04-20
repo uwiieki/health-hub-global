@@ -142,7 +142,7 @@ export const HeroSection = () => {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">24/7</p>
-                  <p className="text-xs text-muted-foreground">Экстренная помощь</p>
+                  <p className="text-xs text-muted-foreground">{t('hero.emergency')}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -151,7 +151,7 @@ export const HeroSection = () => {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">50+</p>
-                  <p className="text-xs text-muted-foreground">Специалистов</p>
+                  <p className="text-xs text-muted-foreground">{t('hero.specialists')}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -159,8 +159,8 @@ export const HeroSection = () => {
                   <Shield className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">15 лет</p>
-                  <p className="text-xs text-muted-foreground">На рынке</p>
+                  <p className="text-sm font-semibold text-foreground">15 {t('hero.years')}</p>
+                  <p className="text-xs text-muted-foreground">{t('hero.market')}</p>
                 </div>
               </div>
             </div>

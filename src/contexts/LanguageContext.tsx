@@ -65,7 +65,15 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.phone': 'Телефон',
     'contact.form.message': 'Сообщение',
     'contact.form.submit': 'Отправить',
-    
+    'contact.toast.title': 'Сообщение отправлено',
+    'contact.toast.desc': 'Мы свяжемся с вами в ближайшее время.',
+    'contact.address.value': 'г. Актобе, ул. Спортивная 1',
+    'contact.hours.value': 'Пн-Пт: 08:00-20:00, Сб: 09:00-18:00',
+    'hero.emergency': 'Экстренная помощь',
+    'hero.specialists': 'Специалистов',
+    'hero.years': 'лет',
+    'hero.market': 'На рынке',
+
     // Footer
     'footer.rights': 'Все права защищены',
     'footer.privacy': 'Политика конфиденциальности',
@@ -132,7 +140,15 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.phone': 'Телефон',
     'contact.form.message': 'Хабарлама',
     'contact.form.submit': 'Жіберу',
-    
+    'contact.toast.title': 'Хабарлама жіберілді',
+    'contact.toast.desc': 'Біз сізбен жақын арада байланысамыз.',
+    'contact.address.value': 'Ақтөбе қ., Спорттық к-сі 1',
+    'contact.hours.value': 'Дс-Жм: 08:00-20:00, Сб: 09:00-18:00',
+    'hero.emergency': 'Жедел көмек',
+    'hero.specialists': 'Маман',
+    'hero.years': 'жыл',
+    'hero.market': 'Нарықта',
+
     // Footer
     'footer.rights': 'Барлық құқықтар қорғалған',
     'footer.privacy': 'Құпиялылық саясаты',
@@ -199,7 +215,15 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.phone': 'Phone',
     'contact.form.message': 'Message',
     'contact.form.submit': 'Submit',
-    
+    'contact.toast.title': 'Message sent',
+    'contact.toast.desc': 'We will contact you shortly.',
+    'contact.address.value': 'Aktobe, Sportivnaya St. 1',
+    'contact.hours.value': 'Mon-Fri: 08:00-20:00, Sat: 09:00-18:00',
+    'hero.emergency': 'Emergency care',
+    'hero.specialists': 'Specialists',
+    'hero.years': 'years',
+    'hero.market': 'On the market',
+
     // Footer
     'footer.rights': 'All rights reserved',
     'footer.privacy': 'Privacy Policy',
