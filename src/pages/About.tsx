@@ -1,32 +1,25 @@
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Award, Users, Target, Heart, Building, User } from 'lucide-react';
+import { Award, Target, Building, User } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const leadership = [
   {
     role: { ru: 'Директор', kz: 'Директор', en: 'Director' },
-    name: { ru: 'Иванов Сергей Александрович', kz: 'Иванов Сергей Александрович', en: 'Sergey A. Ivanov' },
-    desc: { ru: 'Доктор медицинских наук, заслуженный врач РК. Более 25 лет опыта в управлении медицинскими учреждениями.', kz: 'Медицина ғылымдарының докторы, ҚР құрметті дәрігері. Медициналық мекемелерді басқаруда 25 жылдан астам тәжірибе.', en: 'Doctor of Medical Sciences, Honored Physician of RK. Over 25 years of experience in healthcare management.' },
+    name: { ru: 'Нурматов Азамат Басимбекович', kz: 'Нұрматов Азамат Басімбекұлы', en: 'Azamat B. Nurmatov' },
+    desc: { ru: 'Руководитель центра спортивной медицины Актюбинской области.', kz: 'Ақтөбе облысының спорттық медицина орталығының басшысы.', en: 'Head of the Aktobe Region Sports Medicine Center.' },
   },
   {
-    role: { ru: 'Заместитель директора по лечебной работе', kz: 'Емдеу жұмысы бойынша директордың орынбасары', en: 'Deputy Director for Clinical Work' },
-    name: { ru: 'Петрова Анна Викторовна', kz: 'Петрова Анна Викторовна', en: 'Anna V. Petrova' },
-    desc: { ru: 'Кандидат медицинских наук, врач высшей категории. Специализация — внутренние болезни и кардиология.', kz: 'Медицина ғылымдарының кандидаты, жоғары санатты дәрігер. Мамандануы — ішкі аурулар мен кардиология.', en: 'Candidate of Medical Sciences, highest category physician. Specialization — internal medicine and cardiology.' },
+    role: { ru: 'Заместитель директора', kz: 'Директордың орынбасары', en: 'Deputy Director' },
+    name: { ru: 'Айдарбек Нурбек Жуманулы', kz: 'Айдарбек Нұрбек Жұманұлы', en: 'Nurbek Zh. Aidarbek' },
+    desc: { ru: 'Заместитель директора центра.', kz: 'Орталық директорының орынбасары.', en: 'Deputy Director of the Center.' },
   },
   {
-    role: { ru: 'Заместитель директора по организационной работе', kz: 'Ұйымдастыру жұмысы бойынша директордың орынбасары', en: 'Deputy Director for Organizational Work' },
-    name: { ru: 'Казыбеков Ерлан Нурланович', kz: 'Қазыбеков Ерлан Нұрланұлы', en: 'Yerlan N. Kazybekov' },
-    desc: { ru: 'Магистр общественного здравоохранения. Более 15 лет опыта в организации здравоохранения.', kz: 'Қоғамдық денсаулық сақтау магистрі. Денсаулық сақтауды ұйымдастыруда 15 жылдан астам тәжірибе.', en: 'Master of Public Health. Over 15 years of experience in healthcare organization.' },
+    role: { ru: 'Заместитель директора', kz: 'Директордың орынбасары', en: 'Deputy Director' },
+    name: { ru: 'Айдарбек Нурбек Жуманулы', kz: 'Айдарбек Нұрбек Жұманұлы', en: 'Nurbek Zh. Aidarbek' },
+    desc: { ru: 'Заместитель директора центра.', kz: 'Орталық директорының орынбасары.', en: 'Deputy Director of the Center.' },
   },
-];
-
-const values = [
-  { icon: Heart, titleRu: 'Забота о пациентах', titleKz: 'Науқастарға қамқорлық', titleEn: 'Patient Care', descRu: 'Каждый пациент для нас уникален', descKz: 'Әр науқас біз үшін бірегей', descEn: 'Every patient is unique to us' },
-  { icon: Shield, titleRu: 'Качество', titleKz: 'Сапа', titleEn: 'Quality', descRu: 'Высокие стандарты медицины', descKz: 'Жоғары медицина стандарттары', descEn: 'High medical standards' },
-  { icon: Users, titleRu: 'Командная работа', titleKz: 'Командалық жұмыс', titleEn: 'Teamwork', descRu: 'Сплоченная команда профессионалов', descKz: 'Мамандардың үйлесімді командасы', descEn: 'A cohesive team of professionals' },
-  { icon: Target, titleRu: 'Инновации', titleKz: 'Инновациялар', titleEn: 'Innovation', descRu: 'Современные методы лечения', descKz: 'Заманауи емдеу әдістері', descEn: 'Modern treatment methods' },
 ];
 
 const achievements = [
@@ -60,16 +53,14 @@ const About = () => {
       historyText: 'Медицинский центр MediCare был основан в 2009 году группой опытных врачей, объединенных идеей создания клиники нового поколения. За 15 лет работы мы выросли из небольшого медицинского кабинета в современный многопрофильный центр с более чем 50 специалистами.',
       missionTitle: 'Наша миссия',
       missionText: 'Предоставлять качественную, доступную и современную медицинскую помощь, используя передовые технологии и индивидуальный подход к каждому пациенту.',
-      valuesTitle: 'Наши ценности',
       achievementsTitle: 'Достижения и сертификаты',
       leadershipTitle: 'Руководство',
     },
     kz: {
       historyTitle: 'Клиника тарихы',
       historyText: 'MediCare медициналық орталығы 2009 жылы жаңа буын клиникасын құру идеясымен біріккен тәжірибелі дәрігерлер тобы құрды. 15 жыл жұмыс істеу барысында біз шағын медициналық кабинеттен 50-ден астам маманы бар заманауи көп бейінді орталыққа айналдық.',
-      missionTitle: 'Біздің миссия',
+      missionTitle: 'Біздің миссиямыз',
       missionText: 'Озық технологияларды және әр науқасқа жеке көзқарасты қолдана отырып, сапалы, қолжетімді және заманауи медициналық көмек көрсету.',
-      valuesTitle: 'Біздің құндылықтар',
       achievementsTitle: 'Жетістіктер мен сертификаттар',
       leadershipTitle: 'Басшылық',
     },
@@ -78,7 +69,6 @@ const About = () => {
       historyText: 'MediCare Medical Center was founded in 2009 by a group of experienced doctors united by the idea of creating a new generation clinic. Over 15 years of work, we have grown from a small medical office into a modern multidisciplinary center with more than 50 specialists.',
       missionTitle: 'Our Mission',
       missionText: 'To provide quality, accessible and modern medical care using advanced technologies and an individual approach to each patient.',
-      valuesTitle: 'Our Values',
       achievementsTitle: 'Achievements and Certificates',
       leadershipTitle: 'Leadership',
     },
@@ -125,30 +115,6 @@ const About = () => {
                 </p>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Values */}
-          <div className="mb-16">
-            <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
-              {c.valuesTitle}
-            </h2>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {values.map((value, index) => (
-                <Card key={index} className="border-border/50 bg-card text-center">
-                  <CardContent className="p-6">
-                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                      <value.icon className="h-7 w-7 text-primary" />
-                    </div>
-                    <h3 className="font-display text-lg font-semibold text-foreground mb-2">
-                      {getTitle(value)}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {getDesc(value)}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           </div>
 
           {/* Leadership */}
