@@ -1,4 +1,4 @@
-import { ArrowRight, Play, Shield, Clock, Users, Calendar, ChevronLeft, ChevronRight, Stethoscope, UserCheck, FileText, Newspaper } from 'lucide-react';
+import { ArrowRight, Play, Shield, Calendar, ChevronLeft, ChevronRight, Stethoscope, UserCheck, FileText, Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState, useCallback } from 'react';
