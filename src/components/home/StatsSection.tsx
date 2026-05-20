@@ -66,20 +66,7 @@ export const StatsSection = () => {
         }} />
       </div>
 
-      <div className="container relative">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          {stats.map((stat, index) => (
-            <StatItem
-              key={stat.key}
-              value={stat.value}
-              suffix={stat.suffix}
-              label={t(stat.key)}
-              delay={index * 100}
-              isVisible={isVisible}
-            />
-          ))}
-        </div>
-      </div>
+      <div className="container relative" />
     </section>
   );
 };
