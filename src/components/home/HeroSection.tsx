@@ -1,4 +1,4 @@
-import { ArrowRight, Play, Shield, Clock, Users, Calendar, ChevronLeft, ChevronRight, Stethoscope, UserCheck, FileText, Newspaper } from 'lucide-react';
+import { ArrowRight, Play, Shield, Calendar, ChevronLeft, ChevronRight, Stethoscope, UserCheck, FileText, Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState, useCallback } from 'react';
@@ -135,35 +135,6 @@ export const HeroSection = () => {
               </Button>
             </div>
 
-            <div className="flex flex-wrap gap-6 pt-4">
-              <div className="flex items-center gap-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                  <Clock className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">24/7</p>
-                  <p className="text-xs text-muted-foreground">{t('hero.emergency')}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                  <Users className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">50+</p>
-                  <p className="text-xs text-muted-foreground">{t('hero.specialists')}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                  <Shield className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">15 {t('hero.years')}</p>
-                  <p className="text-xs text-muted-foreground">{t('hero.market')}</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Carousel */}
