@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import doctorIcon from '@/assets/doctor-icon.png';
+import { getSpecialistPhoto } from '@/lib/specialistPhotos';
 
 interface Doctor {
   id: string;
@@ -39,23 +39,15 @@ export const DoctorsSection = () => {
           {doctors.map((doctor) => (
             <Link key={doctor.id} to={`/doctors/${doctor.id}`} className="group">
               <Card className="overflow-hidden border-border/50 bg-card transition-all duration-300 hover:shadow-card h-full">
-                <div className={`relative aspect-[3/4] overflow-hidden ${!doctor.photo_url ? 'bg-secondary/40 flex items-center justify-center' : ''}`}>
-                  <img src={doctor.photo_url || doctorIcon} alt={getName(doctor)} className={`${doctor.photo_url ? 'h-full w-full object-cover' : 'h-2/3 w-2/3 object-contain'} transition-transform duration-500 group-hover:scale-105`} loading="lazy" />
-                  {doctor.photo_url && <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent" />}
-                  {doctor.photo_url && (
-                    <div className="absolute bottom-0 left-0 right-0 p-4 text-primary-foreground">
-                      <h3 className="font-display text-lg font-semibold">{getName(doctor)}</h3>
-                      <p className="text-sm opacity-90">{getSpec(doctor)}</p>
-                    </div>
-                  )}
+                <div className="relative aspect-square overflow-hidden">
+                  <img src={getSpecialistPhoto(doctor.id)} alt={getName(doctor)} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-primary-foreground">
+                    <h3 className="font-display text-lg font-semibold">{getName(doctor)}</h3>
+                    <p className="text-sm opacity-90">{getSpec(doctor)}</p>
+                  </div>
                 </div>
                 <CardContent className="p-4">
-                  {!doctor.photo_url && (
-                    <div className="mb-2">
-                      <h3 className="font-display text-lg font-semibold text-foreground">{getName(doctor)}</h3>
-                      <p className="text-sm text-muted-foreground">{getSpec(doctor)}</p>
-                    </div>
-                  )}
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">{doctor.experience_years} {t('doctors.experience')}</span>
                     <span className="text-sm font-medium text-primary group-hover:underline">{t('services.learnMore')}</span>
