@@ -57,9 +57,9 @@ export const HeroSection = () => {
       },
       {
         type: 'page', id: 'doctors',
-        title: language === 'kz' ? 'Біздің дәрігерлер' : language === 'en' ? 'Our Doctors' : 'Наши врачи',
+        title: language === 'kz' ? 'Біздің мамандар' : language === 'en' ? 'Our Specialists' : 'Наши специалисты',
         description: language === 'kz' ? 'Тәжірибелі мамандар тобы сіздің денсаулығыңыз үшін' : language === 'en' ? 'Experienced specialists dedicated to your health' : 'Команда опытных специалистов для вашего здоровья',
-        link: '/doctors', linkLabel: language === 'kz' ? 'Дәрігерлерді көру' : language === 'en' ? 'Meet Doctors' : 'Познакомиться с врачами',
+        link: '/doctors', linkLabel: language === 'kz' ? 'Мамандарды көру' : language === 'en' ? 'Meet Specialists' : 'Познакомиться со специалистами',
         icon: <UserCheck className="h-8 w-8" />,
         bgGradient: 'from-mint/20 via-mint/5 to-transparent',
       },
