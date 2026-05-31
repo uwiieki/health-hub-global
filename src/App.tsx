@@ -32,7 +32,7 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename="/health-hub-global">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Services />} />
@@ -54,7 +54,7 @@ const App = () => (
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
-          <BrowserRouter basename="/health-hub-global">
+          </BrowserRouter>
         </TooltipProvider>
       </AuthProvider>
     </LanguageProvider>
