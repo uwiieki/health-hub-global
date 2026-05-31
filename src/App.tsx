@@ -54,7 +54,7 @@ const App = () => (
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </BrowserRouter>
+          <BrowserRouter basename="/health-hub-global">
         </TooltipProvider>
       </AuthProvider>
     </LanguageProvider>
