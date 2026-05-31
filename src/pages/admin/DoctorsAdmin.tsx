@@ -83,12 +83,12 @@ const DoctorsAdmin = () => {
                   <div><label className="text-sm font-medium">Специализация (EN)</label><Input value={editItem.specialization_en || ''} onChange={(e) => setEditItem({ ...editItem, specialization_en: e.target.value })} /></div>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-3">
-                  <div><label className="text-sm font-medium">Био (RU)</label><Textarea value={editItem.bio_ru || ''} onChange={(e) => setEditItem({ ...editItem, bio_ru: e.target.value })} /></div>
-                  <div><label className="text-sm font-medium">Био (KZ)</label><Textarea value={editItem.bio_kz || ''} onChange={(e) => setEditItem({ ...editItem, bio_kz: e.target.value })} /></div>
-                  <div><label className="text-sm font-medium">Био (EN)</label><Textarea value={editItem.bio_en || ''} onChange={(e) => setEditItem({ ...editItem, bio_en: e.target.value })} /></div>
+                  <div><label className="text-sm font-medium">Био (RU)</label><Textarea rows={4} value={editItem.bio_ru || ''} onChange={(e) => setEditItem({ ...editItem, bio_ru: e.target.value })} /></div>
+                  <div><label className="text-sm font-medium">Био (KZ)</label><Textarea rows={4} value={editItem.bio_kz || ''} onChange={(e) => setEditItem({ ...editItem, bio_kz: e.target.value })} /></div>
+                  <div><label className="text-sm font-medium">Био (EN)</label><Textarea rows={4} value={editItem.bio_en || ''} onChange={(e) => setEditItem({ ...editItem, bio_en: e.target.value })} /></div>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-3">
-                  <div><label className="text-sm font-medium">Образование</label><Input value={editItem.education || ''} onChange={(e) => setEditItem({ ...editItem, education: e.target.value })} /></div>
+                  <div><label className="text-sm font-medium">Образование</label><Textarea rows={4} value={editItem.education || ''} onChange={(e) => setEditItem({ ...editItem, education: e.target.value })} /></div>
                   <div><label className="text-sm font-medium">Опыт (лет)</label><Input type="number" value={editItem.experience_years || 0} onChange={(e) => setEditItem({ ...editItem, experience_years: parseInt(e.target.value) || 0 })} /></div>
                   <div>
                     <label className="text-sm font-medium">Статус</label>
