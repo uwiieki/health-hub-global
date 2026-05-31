@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { ArrowLeft, GraduationCap, Briefcase, Award } from 'lucide-react';
-import doctorIcon from '@/assets/doctor-icon.png';
+import { getSpecialistPhoto } from '@/lib/specialistPhotos';
 
 interface Doctor {
   id: string;
@@ -59,11 +59,11 @@ const DoctorDetail = () => {
             <div className="grid gap-8 md:grid-cols-[320px_1fr]">
               <div>
                 <Card className="overflow-hidden border-border/50">
-                  <div className={`relative aspect-[3/4] ${!doctor.photo_url ? 'bg-secondary/40 flex items-center justify-center' : ''}`}>
+                  <div className="relative aspect-square">
                     <img
-                      src={doctor.photo_url || doctorIcon}
+                      src={getSpecialistPhoto(doctor.id)}
                       alt={getName(doctor)}
-                      className={doctor.photo_url ? 'h-full w-full object-cover' : 'h-2/3 w-2/3 object-contain'}
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 </Card>
