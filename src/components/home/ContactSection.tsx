@@ -12,7 +12,7 @@ export const ContactSection = () => {
   const contactInfo = [
     { icon: MapPin, labelKey: 'contact.address', value: t('contact.address.value') },
     { icon: Phone, labelKey: 'contact.phone', value: '+7 (777) 123-45-67', href: 'tel:+77771234567' },
-    { icon: Mail, labelKey: 'contact.email', value: 'info@medicare.kz', href: 'mailto:info@medicare.kz' },
+    { icon: Mail, labelKey: 'contact.email', value: 'csm.aktobe@yandex.kz', href: 'mailto:csm.aktobe@yandex.kz' },
     { icon: Clock, labelKey: 'contact.hours', value: t('contact.hours.value') },
   ];
   const [formData, setFormData] = useState({
