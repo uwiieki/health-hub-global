@@ -3,24 +3,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Award, Target, Building, User } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Link } from 'react-router-dom';
+import { leaders } from '@/data/leaders';
+import { getSpecialistPhoto } from '@/lib/specialistPhotos';
 
-const leadership = [
-  {
-    role: { ru: 'Директор', kz: 'Директор', en: 'Director' },
-    name: { ru: 'Нурматов Азамат Басимбекович', kz: 'Нұрматов Азамат Басімбекұлы', en: 'Azamat B. Nurmatov' },
-    desc: { ru: 'Руководитель центра спортивной медицины Актюбинской области.', kz: 'Ақтөбе облысының спорттық медицина орталығының басшысы.', en: 'Head of the Aktobe Region Sports Medicine Center.' },
-  },
-  {
-    role: { ru: 'Заместитель директора', kz: 'Директордың орынбасары', en: 'Deputy Director' },
-    name: { ru: 'Айдарбек Нурбек Жуманулы', kz: 'Айдарбек Нұрбек Жұманұлы', en: 'Nurbek Zh. Aidarbek' },
-    desc: { ru: 'Заместитель директора центра.', kz: 'Орталық директорының орынбасары.', en: 'Deputy Director of the Center.' },
-  },
-  {
-    role: { ru: 'Заместитель директора', kz: 'Директордың орынбасары', en: 'Deputy Director' },
-    name: { ru: 'Айдарбек Нурбек Жуманулы', kz: 'Айдарбек Нұрбек Жұманұлы', en: 'Nurbek Zh. Aidarbek' },
-    desc: { ru: 'Заместитель директора центра.', kz: 'Орталық директорының орынбасары.', en: 'Deputy Director of the Center.' },
-  },
-];
+const leadership = leaders;
 
 const achievements = [
   { titleRu: 'ISO 9001:2015', descRu: 'Сертификат качества', descKz: 'Сапа сертификаты', descEn: 'Quality Certificate' },
@@ -123,25 +110,28 @@ const About = () => {
               {c.leadershipTitle}
             </h2>
             <div className="grid gap-8 lg:grid-cols-3">
-              {leadership.map((person, index) => (
-                <Card key={index} className="border-border/50 bg-card overflow-hidden">
-                  <CardContent className="p-8 text-center">
-                    <Avatar className="h-24 w-24 mx-auto mb-6">
-                      <AvatarFallback className="bg-primary/10 text-primary text-2xl font-bold">
-                        <User className="h-10 w-10" />
-                      </AvatarFallback>
-                    </Avatar>
-                    <p className="text-sm font-medium text-primary mb-2">
-                      {language === 'kz' ? person.role.kz : language === 'en' ? person.role.en : person.role.ru}
-                    </p>
-                    <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                      {language === 'kz' ? person.name.kz : language === 'en' ? person.name.en : person.name.ru}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {language === 'kz' ? person.desc.kz : language === 'en' ? person.desc.en : person.desc.ru}
-                    </p>
-                  </CardContent>
-                </Card>
+              {leadership.map((person) => (
+                <Link key={person.id} to={`/leaders/${person.id}`} className="group">
+                  <Card className="border-border/50 bg-card overflow-hidden transition-all duration-300 hover:shadow-card h-full">
+                    <CardContent className="p-8 text-center">
+                      <Avatar className="h-24 w-24 mx-auto mb-6">
+                        <AvatarImage src={getSpecialistPhoto(person.id)} alt={person.name.ru} className="object-cover" />
+                        <AvatarFallback className="bg-primary/10 text-primary text-2xl font-bold">
+                          <User className="h-10 w-10" />
+                        </AvatarFallback>
+                      </Avatar>
+                      <p className="text-sm font-medium text-primary mb-2">
+                        {language === 'kz' ? person.role.kz : language === 'en' ? person.role.en : person.role.ru}
+                      </p>
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:underline">
+                        {language === 'kz' ? person.name.kz : language === 'en' ? person.name.en : person.name.ru}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {language === 'kz' ? person.desc.kz : language === 'en' ? person.desc.en : person.desc.ru}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
