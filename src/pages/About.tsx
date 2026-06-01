@@ -3,24 +3,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Award, Target, Building, User } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Link } from 'react-router-dom';
+import { leaders } from '@/data/leaders';
+import { getSpecialistPhoto } from '@/lib/specialistPhotos';
 
-const leadership = [
-  {
-    role: { ru: 'Директор', kz: 'Директор', en: 'Director' },
-    name: { ru: 'Нурматов Азамат Басимбекович', kz: 'Нұрматов Азамат Басімбекұлы', en: 'Azamat B. Nurmatov' },
-    desc: { ru: 'Руководитель центра спортивной медицины Актюбинской области.', kz: 'Ақтөбе облысының спорттық медицина орталығының басшысы.', en: 'Head of the Aktobe Region Sports Medicine Center.' },
-  },
-  {
-    role: { ru: 'Заместитель директора', kz: 'Директордың орынбасары', en: 'Deputy Director' },
-    name: { ru: 'Айдарбек Нурбек Жуманулы', kz: 'Айдарбек Нұрбек Жұманұлы', en: 'Nurbek Zh. Aidarbek' },
-    desc: { ru: 'Заместитель директора центра.', kz: 'Орталық директорының орынбасары.', en: 'Deputy Director of the Center.' },
-  },
-  {
-    role: { ru: 'Заместитель директора', kz: 'Директордың орынбасары', en: 'Deputy Director' },
-    name: { ru: 'Айдарбек Нурбек Жуманулы', kz: 'Айдарбек Нұрбек Жұманұлы', en: 'Nurbek Zh. Aidarbek' },
-    desc: { ru: 'Заместитель директора центра.', kz: 'Орталық директорының орынбасары.', en: 'Deputy Director of the Center.' },
-  },
-];
+const leadership = leaders;
 
 const achievements = [
   { titleRu: 'ISO 9001:2015', descRu: 'Сертификат качества', descKz: 'Сапа сертификаты', descEn: 'Quality Certificate' },
