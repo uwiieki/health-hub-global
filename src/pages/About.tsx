@@ -110,25 +110,28 @@ const About = () => {
               {c.leadershipTitle}
             </h2>
             <div className="grid gap-8 lg:grid-cols-3">
-              {leadership.map((person, index) => (
-                <Card key={index} className="border-border/50 bg-card overflow-hidden">
-                  <CardContent className="p-8 text-center">
-                    <Avatar className="h-24 w-24 mx-auto mb-6">
-                      <AvatarFallback className="bg-primary/10 text-primary text-2xl font-bold">
-                        <User className="h-10 w-10" />
-                      </AvatarFallback>
-                    </Avatar>
-                    <p className="text-sm font-medium text-primary mb-2">
-                      {language === 'kz' ? person.role.kz : language === 'en' ? person.role.en : person.role.ru}
-                    </p>
-                    <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                      {language === 'kz' ? person.name.kz : language === 'en' ? person.name.en : person.name.ru}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {language === 'kz' ? person.desc.kz : language === 'en' ? person.desc.en : person.desc.ru}
-                    </p>
-                  </CardContent>
-                </Card>
+              {leadership.map((person) => (
+                <Link key={person.id} to={`/leaders/${person.id}`} className="group">
+                  <Card className="border-border/50 bg-card overflow-hidden transition-all duration-300 hover:shadow-card h-full">
+                    <CardContent className="p-8 text-center">
+                      <Avatar className="h-24 w-24 mx-auto mb-6">
+                        <AvatarImage src={getSpecialistPhoto(person.id)} alt={person.name.ru} className="object-cover" />
+                        <AvatarFallback className="bg-primary/10 text-primary text-2xl font-bold">
+                          <User className="h-10 w-10" />
+                        </AvatarFallback>
+                      </Avatar>
+                      <p className="text-sm font-medium text-primary mb-2">
+                        {language === 'kz' ? person.role.kz : language === 'en' ? person.role.en : person.role.ru}
+                      </p>
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:underline">
+                        {language === 'kz' ? person.name.kz : language === 'en' ? person.name.en : person.name.ru}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {language === 'kz' ? person.desc.kz : language === 'en' ? person.desc.en : person.desc.ru}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
