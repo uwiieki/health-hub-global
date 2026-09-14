@@ -14,6 +14,8 @@ import News from "./pages/News";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import LegalActs from "./pages/LegalActs";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./components/admin/AdminLayout";
