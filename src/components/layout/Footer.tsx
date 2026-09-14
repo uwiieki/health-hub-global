@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send, Music2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Instagram, MessageCircle, Music2 } from 'lucide-react';
 import logoImg from '@/assets/logo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 
