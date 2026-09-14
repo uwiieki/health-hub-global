@@ -24,29 +24,31 @@ export const Footer = () => {
             </p>
             <div className="flex gap-3">
               <a
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/csm.aktobe"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-              >
-                <Send className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
+                href="https://www.tiktok.com/@csm.aktobe"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="TikTok"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <Music2 className="h-5 w-5" />
+              </a>
+              <a
+                href="https://wa.me/77000000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <MessageCircle className="h-5 w-5" />
               </a>
             </div>
           </div>
