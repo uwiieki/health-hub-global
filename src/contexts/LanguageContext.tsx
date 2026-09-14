@@ -292,6 +292,38 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'All rights reserved',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
+
+    // Privacy
+    'privacy.title': 'Privacy Policy',
+    'privacy.lastUpdated': 'Last updated: September 14, 2026',
+    'privacy.section1.title': '1. General Provisions',
+    'privacy.section1.text': 'This Privacy Policy governs the processing of personal data of users of the Aktobe Region Sports Medicine Center website.',
+    'privacy.section2.title': '2. Data We Collect',
+    'privacy.section2.text': 'We may collect your name, contact phone number, email address, and other information necessary for appointment scheduling and medical services.',
+    'privacy.section3.title': '3. How We Use Data',
+    'privacy.section3.text': 'Personal data is used solely to provide medical services, schedule appointments, respond to inquiries, and improve service quality.',
+    'privacy.section4.title': '4. Data Protection',
+    'privacy.section4.text': 'We take reasonable measures to protect personal data from unauthorized access, alteration, disclosure, or destruction.',
+    'privacy.section5.title': '5. Cookies',
+    'privacy.section5.text': 'The website may use cookies to improve functionality and analyze traffic. By continuing to use the site, you agree to the use of cookies.',
+    'privacy.section6.title': '6. Contact Information',
+    'privacy.section6.text': 'For questions about personal data processing, contact us at: Aktobe, Sportivnaya St. 1, or by email at csm.aktobe@yandex.kz.',
+
+    // Terms
+    'terms.title': 'Terms of Service',
+    'terms.lastUpdated': 'Last updated: September 14, 2026',
+    'terms.section1.title': '1. General Provisions',
+    'terms.section1.text': 'By using the Aktobe Region Sports Medicine Center website, you agree to these Terms of Service.',
+    'terms.section2.title': '2. Medical Services',
+    'terms.section2.text': 'Information on the website is for reference only and does not replace an in-person doctor consultation. Medical services are provided only after examination by a specialist.',
+    'terms.section3.title': '3. User Obligations',
+    'terms.section3.text': 'The user agrees to provide accurate information when scheduling an appointment and not to use the website for unlawful purposes.',
+    'terms.section4.title': '4. Limitation of Liability',
+    'terms.section4.text': 'The Center is not liable for any damages resulting from the use of information posted on the website without consulting a specialist.',
+    'terms.section5.title': '5. Changes to Terms',
+    'terms.section5.text': 'The website administration reserves the right to amend these Terms of Service at any time without prior notice.',
+    'terms.section6.title': '6. Contact Information',
+    'terms.section6.text': 'For any questions, contact us at: Aktobe, Sportivnaya St. 1, or by email at csm.aktobe@yandex.kz.',
     
     // Common
     'common.loading': 'Loading...',
