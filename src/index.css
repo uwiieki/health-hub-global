@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 /* Medical Organization Design System
    Color Palette: Professional teal, calming greens, warm accents
-   Typography: Inter for body, Playfair Display for headings
+   Typography: Inter for body, PT Serif for headings (full Kazakh Cyrillic support)
 */
 
 @layer base {
@@ -133,8 +133,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    @apply font-semibold tracking-tight;
+    font-family: 'PT Serif', serif;
+    @apply font-bold tracking-tight;
   }
 }
 
