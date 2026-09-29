@@ -1,7 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Award, Target, Building, User } from 'lucide-react';
+import { Target, Building, User } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Link } from 'react-router-dom';
 import { leaders } from '@/data/leaders';
@@ -9,54 +9,29 @@ import { getSpecialistPhoto } from '@/lib/specialistPhotos';
 
 const leadership = leaders;
 
-const achievements = [
-  { titleRu: 'ISO 9001:2015', descRu: 'Сертификат качества', descKz: 'Сапа сертификаты', descEn: 'Quality Certificate' },
-  { titleRu: 'JCI', descRu: 'Международная аккредитация', descKz: 'Халықаралық аккредитация', descEn: 'International Accreditation' },
-  { titleRu: 'Top-100', descRu: 'Лучшие клиники Казахстана', descKz: 'Қазақстанның үздік клиникалары', descEn: 'Best Clinics in Kazakhstan' },
-];
-
 const About = () => {
   const { t, language } = useLanguage();
-
-  const getTitle = (item: { titleRu: string; titleKz?: string; titleEn?: string }) => {
-    switch (language) {
-      case 'kz': return item.titleKz || item.titleRu;
-      case 'en': return item.titleEn || item.titleRu;
-      default: return item.titleRu;
-    }
-  };
-
-  const getDesc = (item: { descRu: string; descKz: string; descEn: string }) => {
-    switch (language) {
-      case 'kz': return item.descKz;
-      case 'en': return item.descEn;
-      default: return item.descRu;
-    }
-  };
 
   const content = {
     ru: {
       historyTitle: 'История клиники',
-      historyText: 'Медицинский центр MediCare был основан в 2009 году группой опытных врачей, объединенных идеей создания клиники нового поколения. За 15 лет работы мы выросли из небольшого медицинского кабинета в современный многопрофильный центр с более чем 50 специалистами.',
+      historyText: 'Центр спортивной медицины Актюбинской области открылся в 2026 году как новая современная клиника, объединившая большую команду специалистов разных направлений. С первых дней работы центр делает акцент на реабилитации: у нас собрано оборудование и специалисты для восстановления после травм, операций и интенсивных нагрузок, а также для сопровождения спортсменов на всех этапах — от диагностики до полного возвращения к тренировкам.',
       missionTitle: 'Наша миссия',
       missionText: 'Предоставлять качественную, доступную и современную медицинскую помощь, используя передовые технологии и индивидуальный подход к каждому пациенту.',
-      achievementsTitle: 'Достижения и сертификаты',
       leadershipTitle: 'Руководство',
     },
     kz: {
       historyTitle: 'Клиника тарихы',
-      historyText: 'MediCare медициналық орталығы 2009 жылы жаңа буын клиникасын құру идеясымен біріккен тәжірибелі дәрігерлер тобы құрды. 15 жыл жұмыс істеу барысында біз шағын медициналық кабинеттен 50-ден астам маманы бар заманауи көп бейінді орталыққа айналдық.',
+      historyText: 'Ақтөбе облысының спорттық медицина орталығы 2026 жылы әртүрлі бағыттағы мамандардың үлкен тобын біріктірген жаңа заманауи клиника ретінде ашылды. Жұмысының алғашқы күндерінен бастап орталық оңалтуға баса назар аударады: жарақаттардан, операциялардан және қарқынды жүктемелерден кейін қалпына келтіруге арналған жабдық пен мамандар жиналған, сондай-ақ спортшыларды диагностикадан бастап жаттығуларға толық қайта оралғанға дейінгі барлық кезеңдерде сүйемелдейміз.',
       missionTitle: 'Біздің миссиямыз',
       missionText: 'Озық технологияларды және әр науқасқа жеке көзқарасты қолдана отырып, сапалы, қолжетімді және заманауи медициналық көмек көрсету.',
-      achievementsTitle: 'Жетістіктер мен сертификаттар',
       leadershipTitle: 'Басшылық',
     },
     en: {
       historyTitle: 'Our History',
-      historyText: 'MediCare Medical Center was founded in 2009 by a group of experienced doctors united by the idea of creating a new generation clinic. Over 15 years of work, we have grown from a small medical office into a modern multidisciplinary center with more than 50 specialists.',
+      historyText: 'The Aktobe Region Sports Medicine Center opened in 2026 as a new, modern clinic bringing together a large team of specialists across many fields. From its first days, the center has focused on rehabilitation: we have the equipment and specialists needed for recovery after injuries, surgeries, and intense physical loads, and we support athletes at every stage — from diagnosis to a full return to training.',
       missionTitle: 'Our Mission',
       missionText: 'To provide quality, accessible and modern medical care using advanced technologies and an individual approach to each patient.',
-      achievementsTitle: 'Achievements and Certificates',
       leadershipTitle: 'Leadership',
     },
   };
@@ -132,28 +107,6 @@ const About = () => {
                     </CardContent>
                   </Card>
                 </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Achievements */}
-          <div className="bg-gradient-hero rounded-2xl p-8 md:p-12">
-            <h2 className="font-display text-3xl font-bold text-primary-foreground text-center mb-8">
-              {c.achievementsTitle}
-            </h2>
-            <div className="grid gap-6 sm:grid-cols-3">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="text-center">
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-foreground/10">
-                    <Award className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-primary-foreground mb-1">
-                    {achievement.titleRu}
-                  </h3>
-                  <p className="text-primary-foreground/80 text-sm">
-                    {getDesc(achievement)}
-                  </p>
-                </div>
               ))}
             </div>
           </div>
