@@ -67,8 +67,8 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.submit': 'Отправить',
     'contact.toast.title': 'Сообщение отправлено',
     'contact.toast.desc': 'Мы свяжемся с вами в ближайшее время.',
-    'contact.address.value': 'г. Актобе, ул. Спортивная 1',
-    'contact.hours.value': 'Пн-Пт: 08:00-17:00',
+    'contact.address.value': 'г. Актобе, ул. Бейбитшилик 45',
+    'contact.hours.value': 'Пн-Пт: 09:00-18:00',
     'hero.emergency': 'Экстренная помощь',
     'hero.specialists': 'Специалистов',
     'hero.years': 'лет',
@@ -93,7 +93,7 @@ const translations: Record<Language, Record<string, string>> = {
     'privacy.section5.title': '5. Файлы cookie',
     'privacy.section5.text': 'Сайт может использовать файлы cookie для улучшения работы и анализа посещаемости. Продолжая использовать сайт, вы соглашаетесь с использованием cookie.',
     'privacy.section6.title': '6. Контактная информация',
-    'privacy.section6.text': 'По вопросам обработки персональных данных обращайтесь по адресу: г. Актобе, ул. Спортивная 1, или по электронной почте csm.aktobe@yandex.kz.',
+    'privacy.section6.text': 'По вопросам обработки персональных данных обращайтесь по адресу: г. Актобе, ул. Бейбитшилик 45, или по электронной почте csm.aktobe@yandex.kz.',
 
     // Terms
     'terms.title': 'Условия использования',
@@ -109,7 +109,7 @@ const translations: Record<Language, Record<string, string>> = {
     'terms.section5.title': '5. Изменения условий',
     'terms.section5.text': 'Администрация сайта оставляет за собой право вносить изменения в настоящие Условия использования в любое время без предварительного уведомления.',
     'terms.section6.title': '6. Контактная информация',
-    'terms.section6.text': 'По всем вопросам обращайтесь по адресу: г. Актобе, ул. Спортивная 1, или по электронной почте csm.aktobe@yandex.kz.',
+    'terms.section6.text': 'По всем вопросам обращайтесь по адресу: г. Актобе, ул. Бейбитшилик 45, или по электронной почте csm.aktobe@yandex.kz.',
     
     // Common
     'common.loading': 'Загрузка...',
@@ -174,8 +174,8 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.submit': 'Жіберу',
     'contact.toast.title': 'Хабарлама жіберілді',
     'contact.toast.desc': 'Біз сізбен жақын арада байланысамыз.',
-    'contact.address.value': 'Ақтөбе қ., Спорттық к-сі 1',
-    'contact.hours.value': 'Дс-Жм: 08:00-17:00',
+    'contact.address.value': 'Ақтөбе қ., Бейбітшілік к-сі 45',
+    'contact.hours.value': 'Дс-Жм: 09:00-18:00',
     'hero.emergency': 'Жедел көмек',
     'hero.specialists': 'Маман',
     'hero.years': 'жыл',
@@ -200,7 +200,7 @@ const translations: Record<Language, Record<string, string>> = {
     'privacy.section5.title': '5. Cookie файлдары',
     'privacy.section5.text': 'Сайт жұмысын жақсарту және келушілерді талдау үшін cookie файлдарын пайдалануы мүмкін. Сайтты пайдалана отырып, cookie пайдалануға келісесіз.',
     'privacy.section6.title': '6. Байланыс ақпараты',
-    'privacy.section6.text': 'Жеке деректерді өңдеу мәселелері бойынша Ақтөбе қ., Спорттық к-сі 1 мекенжайы бойынша немесе csm.aktobe@yandex.kz электрондық поштасына хабарласыңыз.',
+    'privacy.section6.text': 'Жеке деректерді өңдеу мәселелері бойынша Ақтөбе қ., Бейбітшілік к-сі 45 мекенжайы бойынша немесе csm.aktobe@yandex.kz электрондық поштасына хабарласыңыз.',
 
     // Terms
     'terms.title': 'Пайдалану шарттары',
@@ -216,7 +216,7 @@ const translations: Record<Language, Record<string, string>> = {
     'terms.section5.title': '5. Шарттарды өзгерту',
     'terms.section5.text': 'Сайт әкімшілігі осы Пайдалану шарттарына алдын ала ескертусіз кез келген уақытта өзгерістер енгізу құқығын өзінде қалдырады.',
     'terms.section6.title': '6. Байланыс ақпараты',
-    'terms.section6.text': 'Барлық сұрақтар бойынша Ақтөбе қ., Спорттық к-сі 1 мекенжайы бойынша немесе csm.aktobe@yandex.kz электрондық поштасына хабарласыңыз.',
+    'terms.section6.text': 'Барлық сұрақтар бойынша Ақтөбе қ., Бейбітшілік к-сі 45 мекенжайы бойынша немесе csm.aktobe@yandex.kz электрондық поштасына хабарласыңыз.',
     
     // Common
     'common.loading': 'Жүктелуде...',
@@ -281,8 +281,8 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.submit': 'Submit',
     'contact.toast.title': 'Message sent',
     'contact.toast.desc': 'We will contact you shortly.',
-    'contact.address.value': 'Aktobe, Sportivnaya St. 1',
-    'contact.hours.value': 'Mon-Fri: 08:00-17:00',
+    'contact.address.value': 'Aktobe, Beibitshilik St. 45',
+    'contact.hours.value': 'Mon-Fri: 09:00-18:00',
     'hero.emergency': 'Emergency care',
     'hero.specialists': 'Specialists',
     'hero.years': 'years',
@@ -307,7 +307,7 @@ const translations: Record<Language, Record<string, string>> = {
     'privacy.section5.title': '5. Cookies',
     'privacy.section5.text': 'The website may use cookies to improve functionality and analyze traffic. By continuing to use the site, you agree to the use of cookies.',
     'privacy.section6.title': '6. Contact Information',
-    'privacy.section6.text': 'For questions about personal data processing, contact us at: Aktobe, Sportivnaya St. 1, or by email at csm.aktobe@yandex.kz.',
+    'privacy.section6.text': 'For questions about personal data processing, contact us at: Aktobe, Beibitshilik St. 45, or by email at csm.aktobe@yandex.kz.',
 
     // Terms
     'terms.title': 'Terms of Service',
@@ -323,7 +323,7 @@ const translations: Record<Language, Record<string, string>> = {
     'terms.section5.title': '5. Changes to Terms',
     'terms.section5.text': 'The website administration reserves the right to amend these Terms of Service at any time without prior notice.',
     'terms.section6.title': '6. Contact Information',
-    'terms.section6.text': 'For any questions, contact us at: Aktobe, Sportivnaya St. 1, or by email at csm.aktobe@yandex.kz.',
+    'terms.section6.text': 'For any questions, contact us at: Aktobe, Beibitshilik St. 45, or by email at csm.aktobe@yandex.kz.',
     
     // Common
     'common.loading': 'Loading...',

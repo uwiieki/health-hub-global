@@ -83,7 +83,7 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
                 <span className="text-sm text-muted-foreground">
-                  г. Актобе, ул. Спортивная 1
+                  г. Актобе, ул. Бейбитшилик 45
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -107,7 +107,7 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
                 <div className="text-sm text-muted-foreground">
-                  <p>Пн-Пт: 08:00 - 17:00</p>
+                  <p>Пн-Пт: 09:00 - 18:00</p>
                 </div>
               </li>
             </ul>
