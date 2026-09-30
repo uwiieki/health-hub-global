@@ -109,12 +109,15 @@ export const HeroSection = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           {/* Content */}
           <div className="space-y-8 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2">
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 transition-colors hover:bg-primary/10"
+            >
               <Shield className="h-4 w-4 text-primary" />
               <span className="text-sm font-medium text-primary">
                 {t('org.name')}
               </span>
-            </div>
+            </Link>
 
             <h1 className="font-display text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
               {t('hero.title')}
@@ -125,13 +128,17 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Button size="lg" className="bg-gradient-hero hover:opacity-90 transition-opacity gap-2 text-base">
-                {t('hero.cta')}
-                <ArrowRight className="h-5 w-5" />
+              <Button asChild size="lg" className="bg-gradient-hero hover:opacity-90 transition-opacity gap-2 text-base">
+                <Link to="/contacts">
+                  {t('hero.cta')}
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 text-base border-primary/30 hover:bg-primary/5">
-                <Play className="h-5 w-5" />
-                {t('hero.services')}
+              <Button asChild size="lg" variant="outline" className="gap-2 text-base border-primary/30 hover:bg-primary/5">
+                <Link to="/services">
+                  <Play className="h-5 w-5" />
+                  {t('hero.services')}
+                </Link>
               </Button>
             </div>
 

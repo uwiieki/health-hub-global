@@ -114,8 +114,8 @@ export const Header = () => {
           <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)} aria-label="Search">
             <Search className="h-5 w-5" />
           </Button>
-          <Button className="bg-gradient-hero hover:opacity-90 transition-opacity">
-            {t('nav.appointment')}
+          <Button asChild className="bg-gradient-hero hover:opacity-90 transition-opacity">
+            <Link to="/contacts">{t('nav.appointment')}</Link>
           </Button>
         </div>
 
@@ -175,8 +175,10 @@ export const Header = () => {
                 </Link>
               ))}
               <div className="pt-4">
-                <Button className="w-full bg-gradient-hero hover:opacity-90">
-                  {t('nav.appointment')}
+                <Button asChild className="w-full bg-gradient-hero hover:opacity-90">
+                  <Link to="/contacts" onClick={() => setIsMobileMenuOpen(false)}>
+                    {t('nav.appointment')}
+                  </Link>
                 </Button>
               </div>
             </div>
