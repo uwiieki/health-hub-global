@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, GraduationCap, Briefcase, Award, User } from 'lucide-react';
 import { getLeader } from '@/data/leaders';
-import { getSpecialistPhoto } from '@/lib/specialistPhotos';
 
 const LeaderDetail = () => {
   const { id } = useParams();
@@ -38,15 +37,7 @@ const LeaderDetail = () => {
               <div>
                 <Card className="overflow-hidden border-border/50">
                   <div className="relative aspect-square bg-secondary/40 flex items-center justify-center">
-                    {leader.photoUrl ? (
-                      <img src={leader.photoUrl} alt={tr(leader.name)} className="h-full w-full object-cover" />
-                    ) : (
-                      <img
-                        src={getSpecialistPhoto(leader.id)}
-                        alt={tr(leader.name)}
-                        className="h-full w-full object-cover"
-                      />
-                    )}
+                    <User className="h-24 w-24 text-primary/30" />
                   </div>
                 </Card>
               </div>
