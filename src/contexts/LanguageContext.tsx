@@ -67,7 +67,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.submit': 'Отправить',
     'contact.toast.title': 'Сообщение отправлено',
     'contact.toast.desc': 'Мы свяжемся с вами в ближайшее время.',
-    'contact.address.value': 'г. Актобе, ул. Бейбитшилик 45',
+    'contact.address.value': 'г. Актобе, ул. Бейбітшілік 45',
     'contact.hours.value': 'Пн-Пт: 09:00-18:00',
     'hero.emergency': 'Экстренная помощь',
     'hero.specialists': 'Специалистов',
@@ -93,7 +93,7 @@ const translations: Record<Language, Record<string, string>> = {
     'privacy.section5.title': '5. Файлы cookie',
     'privacy.section5.text': 'Сайт может использовать файлы cookie для улучшения работы и анализа посещаемости. Продолжая использовать сайт, вы соглашаетесь с использованием cookie.',
     'privacy.section6.title': '6. Контактная информация',
-    'privacy.section6.text': 'По вопросам обработки персональных данных обращайтесь по адресу: г. Актобе, ул. Бейбитшилик 45, или по электронной почте csm.aktobe@yandex.kz.',
+    'privacy.section6.text': 'По вопросам обработки персональных данных обращайтесь по адресу: г. Актобе, ул. Бейбітшілік 45, или по электронной почте csm.aktobe@yandex.kz.',
 
     // Terms
     'terms.title': 'Условия использования',
@@ -109,7 +109,7 @@ const translations: Record<Language, Record<string, string>> = {
     'terms.section5.title': '5. Изменения условий',
     'terms.section5.text': 'Администрация сайта оставляет за собой право вносить изменения в настоящие Условия использования в любое время без предварительного уведомления.',
     'terms.section6.title': '6. Контактная информация',
-    'terms.section6.text': 'По всем вопросам обращайтесь по адресу: г. Актобе, ул. Бейбитшилик 45, или по электронной почте csm.aktobe@yandex.kz.',
+    'terms.section6.text': 'По всем вопросам обращайтесь по адресу: г. Актобе, ул. Бейбітшілік 45, или по электронной почте csm.aktobe@yandex.kz.',
     
     // Common
     'common.loading': 'Загрузка...',

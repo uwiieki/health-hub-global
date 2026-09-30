@@ -83,7 +83,7 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
                 <span className="text-sm text-muted-foreground">
-                  г. Актобе, ул. Бейбитшилик 45
+                  г. Актобе, ул. Бейбітшілік 45
                 </span>
               </li>
               <li className="flex items-center gap-3">
