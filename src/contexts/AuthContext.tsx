@@ -31,23 +31,29 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
+      (_event, session) => {
         setSession(session);
         setUser(session?.user ?? null);
         if (session?.user) {
-          setTimeout(() => checkAdmin(session.user.id), 0);
+          // Deferred to the next tick to avoid calling Supabase directly
+          // inside the onAuthStateChange callback, but loading stays true
+          // until the admin check actually resolves.
+          setTimeout(async () => {
+            await checkAdmin(session.user.id);
+            setLoading(false);
+          }, 0);
         } else {
           setIsAdmin(false);
+          setLoading(false);
         }
-        setLoading(false);
       }
     );
 
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
       if (session?.user) {
-        checkAdmin(session.user.id);
+        await checkAdmin(session.user.id);
       }
       setLoading(false);
     });
