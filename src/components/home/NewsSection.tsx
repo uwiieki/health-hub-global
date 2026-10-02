@@ -77,11 +77,11 @@ export const NewsSection = () => {
             <div className="min-w-0 space-y-4">
               <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/70 px-3.5 py-1.5 text-sm font-medium text-primary">
                 <Calendar className="h-4 w-4" />
-                {t('news.title')}
+                {t('news.homeTitle')}
               </span>
 
               <h2 className="font-display text-3xl font-bold leading-tight text-foreground md:text-4xl">
-                {t('news.title')}
+                {t('news.homeTitle')}
               </h2>
 
               <p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
