@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Instagram, MessageCircle, Music2 } from 'lucide-react';
-import logoImg from '@/assets/logo.png';
+import logoImg from '@/assets/logo-round.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export const Footer = () => {
@@ -13,7 +13,7 @@ export const Footer = () => {
           {/* About */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-10 w-10 rounded-lg object-contain" />
+              <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-10 w-10 rounded-full object-contain" />
               <div>
                 <h3 className={`font-display text-sm text-foreground leading-tight ${language === 'kz' ? 'font-medium' : 'font-semibold'}`}>{t('org.short')}</h3>
                 <p className="text-xs text-muted-foreground">{t('org.region')}</p>

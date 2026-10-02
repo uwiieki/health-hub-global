@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, ChevronDown, Search } from 'lucide-react';
 import { SearchDialog } from '@/components/search/SearchDialog';
-import logoImg from '@/assets/logo.png';
-import logoAktobe from '@/assets/logo-aktobe.png';
-import logoSport from '@/assets/logo-sport.png';
+import logoImg from '@/assets/logo-round.png';
+import logoAktobe from '@/assets/logo-aktobe-round.png';
+import logoSport from '@/assets/logo-sport-round.png';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -46,25 +46,25 @@ export const Header = () => {
         <div className="container flex items-center justify-between py-2">
           <Link to="/" className="flex items-center gap-3 flex-1 min-w-0">
             <div className="flex items-center gap-3 flex-shrink-0">
-              <img src={logoAktobe} alt="Ақтөбе облысы" className="h-14 w-14 md:h-16 md:w-16 object-contain" />
-              <img src={logoSport} alt="Управление спорта и туризма" className="h-14 w-14 md:h-16 md:w-16 object-contain" />
-              <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-14 w-14 md:h-16 md:w-16 object-contain" />
+              <img src={logoAktobe} alt="Ақтөбе облысы" className="h-14 w-14 rounded-full object-contain md:h-16 md:w-16" />
+              <img src={logoSport} alt="Управление спорта и туризма" className="h-14 w-14 rounded-full object-contain md:h-16 md:w-16" />
+              <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-14 w-14 rounded-full object-contain md:h-16 md:w-16" />
             </div>
             <h1 className={cn(
-              'font-display text-xs leading-tight md:text-base lg:text-lg uppercase tracking-wide text-foreground',
+              'font-display text-xs leading-tight md:text-lg lg:text-xl uppercase tracking-wide text-foreground',
               language === 'kz' ? 'font-medium normal-case tracking-normal' : 'font-bold'
             )}>
               {t('org.name')}
             </h1>
           </Link>
           <div className="hidden md:flex items-center gap-4 flex-shrink-0">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 text-[15px] font-medium text-foreground/80">
               <Phone className="h-4 w-4 text-primary" />
               <span>+7 (777) 123-45-67</span>
             </div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="gap-2 text-sm">
+                <Button variant="ghost" size="sm" className="gap-2 text-[15px] font-medium">
                   <span>{currentLang.flag}</span>
                   <span>{currentLang.name}</span>
                   <ChevronDown className="h-4 w-4" />
@@ -98,10 +98,10 @@ export const Header = () => {
               key={link.href}
               to={link.href}
               className={cn(
-                'px-4 py-2 text-sm font-medium transition-colors rounded-md hover:bg-secondary hover:text-primary',
+                'whitespace-nowrap rounded-md px-3 py-2 text-[15px] font-semibold transition-colors hover:bg-secondary hover:text-primary xl:px-4 xl:text-base',
                 location.pathname === link.href
                   ? 'text-primary bg-secondary/80'
-                  : 'text-muted-foreground'
+                  : 'text-foreground/80'
               )}
             >
               {link.label}
