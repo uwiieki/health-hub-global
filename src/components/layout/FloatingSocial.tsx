@@ -40,7 +40,7 @@ export const FloatingSocial = () => {
   }, []);
 
   return (
-    <div className="fixed right-4 bottom-6 z-40 flex flex-col items-center gap-3">
+    <div className="fixed right-2 bottom-4 z-40 flex flex-col items-center gap-2 md:right-4 md:bottom-6 md:gap-3">
       {socials.map(({ name, href, icon: Icon, className }) => (
         <a
           key={name}
@@ -48,9 +48,9 @@ export const FloatingSocial = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={name}
-          className={`flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-transform duration-200 hover:scale-110 ${className}`}
+          className={`flex h-9 w-9 items-center justify-center rounded-full shadow-md transition-transform duration-200 hover:scale-110 md:h-12 md:w-12 md:shadow-lg ${className}`}
         >
-          <Icon className="h-6 w-6" />
+          <Icon className="h-[18px] w-[18px] md:h-6 md:w-6" />
         </a>
       ))}
       {showTop && (
@@ -58,9 +58,9 @@ export const FloatingSocial = () => {
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Scroll to top"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform duration-200 hover:scale-110"
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md transition-transform duration-200 hover:scale-110 md:h-12 md:w-12 md:shadow-lg"
         >
-          <ArrowUp className="h-6 w-6" />
+          <ArrowUp className="h-[18px] w-[18px] md:h-6 md:w-6" />
         </button>
       )}
     </div>
