@@ -69,6 +69,7 @@ const translations: Record<Language, Record<string, string>> = {
     // News
     'news.title': 'Новости и статьи',
     'news.subtitle': 'Полезная информация о здоровье',
+    'news.homeSubtitle': 'Полезная информация о здоровье, спортивной медицине и жизни центра.',
     'news.viewAll': 'Все новости',
     'news.readMore': 'Читать далее',
     
@@ -195,6 +196,7 @@ const translations: Record<Language, Record<string, string>> = {
     // News
     'news.title': 'Жаңалықтар мен мақалалар',
     'news.subtitle': 'Денсаулық туралы пайдалы ақпарат',
+    'news.homeSubtitle': 'Денсаулық, спорттық медицина және орталық өмірі туралы пайдалы ақпарат.',
     'news.viewAll': 'Барлық жаңалықтар',
     'news.readMore': 'Толығырақ оқу',
     
@@ -321,6 +323,7 @@ const translations: Record<Language, Record<string, string>> = {
     // News
     'news.title': 'News & Articles',
     'news.subtitle': 'Useful health information',
+    'news.homeSubtitle': 'Useful information about health, sports medicine and the life of the center.',
     'news.viewAll': 'View All News',
     'news.readMore': 'Read More',
     
