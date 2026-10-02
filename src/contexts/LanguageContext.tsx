@@ -57,6 +57,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': 'Наши услуги',
     'services.subtitle': 'Комплексный подход к вашему здоровью',
+    'services.homeSubtitle': 'Комплексные медицинские услуги для спортсменов, любителей спорта и всех, кто заботится о своём здоровье.',
     'services.viewAll': 'Все услуги',
     'services.learnMore': 'Подробнее',
     
@@ -185,6 +186,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': 'Біздің қызметтер',
     'services.subtitle': 'Денсаулығыңызға кешенді көзқарас',
+    'services.homeSubtitle': 'Спортшыларға, спортты сүйетіндерге және өз денсаулығына алаңдайтын барлық адамдарға арналған кешенді медициналық қызметтер.',
     'services.viewAll': 'Барлық қызметтер',
     'services.learnMore': 'Толығырақ',
     
@@ -313,6 +315,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': 'Our Services',
     'services.subtitle': 'Comprehensive approach to your health',
+    'services.homeSubtitle': 'Comprehensive medical services for athletes, sports enthusiasts and everyone who cares about their health.',
     'services.viewAll': 'View All Services',
     'services.learnMore': 'Learn More',
     
