@@ -30,10 +30,17 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.services': 'Наши услуги',
     
     // Stats
-    'stats.years': 'Лет опыта',
-    'stats.specialists': 'Специалистов',
-    'stats.patients': 'Довольных пациентов',
-    'stats.services': 'Медицинских услуг',
+    'advantages.badge': 'Наши преимущества',
+    'advantages.title': 'Современный центр спортивной медицины',
+    'advantages.subtitle': 'Создаём комфортные условия для диагностики, профилактики и восстановления спортсменов с использованием современных технологий.',
+    'advantages.equipment.title': 'Современное оборудование',
+    'advantages.equipment.desc': 'Для диагностики и контроля состояния спортсменов',
+    'advantages.specialists.title': 'Квалифицированные специалисты',
+    'advantages.specialists.desc': 'Врачи различных медицинских направлений',
+    'advantages.approach.title': 'Комплексный подход',
+    'advantages.approach.desc': 'Обследование, лечение и восстановление в одном центре',
+    'advantages.programs.title': 'Индивидуальные программы',
+    'advantages.programs.desc': 'С учётом вида спорта, возраста и уровня нагрузки',
     
     // Services
     'services.title': 'Наши услуги',
@@ -137,10 +144,17 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.services': 'Біздің қызметтер',
     
     // Stats
-    'stats.years': 'Жыл тәжірибе',
-    'stats.specialists': 'Маман',
-    'stats.patients': 'Қанағаттанған науқас',
-    'stats.services': 'Медициналық қызмет',
+    'advantages.badge': 'Біздің артықшылықтарымыз',
+    'advantages.title': 'Заманауи спорттық медицина орталығы',
+    'advantages.subtitle': 'Заманауи технологияларды қолдана отырып, спортшыларды диагностикалау, алдын алу және қалпына келтіру үшін қолайлы жағдай жасаймыз.',
+    'advantages.equipment.title': 'Заманауи жабдық',
+    'advantages.equipment.desc': 'Спортшылардың жағдайын диагностикалау және бақылау үшін',
+    'advantages.specialists.title': 'Білікті мамандар',
+    'advantages.specialists.desc': 'Әртүрлі медициналық бағыттағы дәрігерлер',
+    'advantages.approach.title': 'Кешенді тәсіл',
+    'advantages.approach.desc': 'Тексеру, емдеу және қалпына келтіру бір орталықта',
+    'advantages.programs.title': 'Жеке бағдарламалар',
+    'advantages.programs.desc': 'Спорт түрін, жасын және жүктеме деңгейін ескере отырып',
     
     // Services
     'services.title': 'Біздің қызметтер',
@@ -244,10 +258,17 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.services': 'Our Services',
     
     // Stats
-    'stats.years': 'Years of Experience',
-    'stats.specialists': 'Specialists',
-    'stats.patients': 'Happy Patients',
-    'stats.services': 'Medical Services',
+    'advantages.badge': 'Our Advantages',
+    'advantages.title': 'A Modern Sports Medicine Center',
+    'advantages.subtitle': 'We create comfortable conditions for diagnostics, prevention and recovery of athletes using modern technologies.',
+    'advantages.equipment.title': 'Modern equipment',
+    'advantages.equipment.desc': "For diagnostics and monitoring of athletes' condition",
+    'advantages.specialists.title': 'Qualified specialists',
+    'advantages.specialists.desc': 'Doctors from various medical fields',
+    'advantages.approach.title': 'Comprehensive approach',
+    'advantages.approach.desc': 'Examination, treatment and recovery in one center',
+    'advantages.programs.title': 'Individual programs',
+    'advantages.programs.desc': 'Tailored to the sport, age and training load',
     
     // Services
     'services.title': 'Our Services',
