@@ -17,7 +17,7 @@ const Privacy = () => {
 
   return (
     <Layout>
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24">
         <div className="container">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">

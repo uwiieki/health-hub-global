@@ -40,7 +40,7 @@ const DoctorDetail = () => {
 
   return (
     <Layout>
-      <section className="py-12 md:py-20 bg-background">
+      <section className="py-12 md:py-20">
         <div className="container max-w-5xl">
           <Button asChild variant="ghost" className="mb-6 gap-2">
             <Link to="/doctors">

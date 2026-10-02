@@ -39,7 +39,7 @@ const About = () => {
 
   return (
     <Layout>
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24">
         <div className="container">
           {/* Header */}
           <div className="mx-auto mb-16 max-w-3xl text-center">

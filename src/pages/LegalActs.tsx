@@ -68,7 +68,7 @@ const LegalActs = () => {
 
   return (
     <Layout>
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24">
         <div className="container">
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <h1 className="font-display text-4xl font-bold text-foreground md:text-5xl">

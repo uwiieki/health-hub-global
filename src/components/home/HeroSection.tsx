@@ -4,7 +4,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Link } from 'react-router-dom';
-import heroBg from '@/assets/hero-bg.webp';
 
 interface NewsItem {
   id: string;
@@ -100,10 +99,7 @@ export const HeroSection = () => {
   }, [total, next]);
 
   return (
-    <section
-      className="relative overflow-hidden bg-background bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${heroBg})` }}
-    >
+    <section className="relative overflow-hidden">
 
       <div className="container relative py-16 md:py-24 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
