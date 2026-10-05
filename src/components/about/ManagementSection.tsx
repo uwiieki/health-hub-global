@@ -1,14 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, MapPin, Phone, Quote, User } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { usePageMeta } from '@/hooks/usePageMeta';
-import { BlogBreadcrumb } from '@/components/blog/BlogBreadcrumb';
 import { deputyManagers, director, type Leader } from '@/data/leaders';
 import { cn } from '@/lib/utils';
-
-const ORG_NAME = 'Центр спортивной медицины Актюбинской области';
 
 const texts = {
   ru: {
@@ -71,29 +66,20 @@ const ContactItem = ({ icon: Icon, children, href }: { icon: LucideIcon; childre
   return href ? <a href={href} className={cn(cls, 'transition-colors hover:text-primary')}>{inner}</a> : <div className={cls}>{inner}</div>;
 };
 
-const Management = () => {
+export const ManagementSection = () => {
   const { t, language } = useLanguage();
   const c = texts[language];
   const tr = (o: Leader['name']) => o[language];
-
-  usePageMeta({ title: c.metaTitle || `${c.title} — ${ORG_NAME}`, description: c.metaDesc });
 
   const count = deputyManagers.length;
   const gridCls = count <= 1 ? 'max-w-xl' : count === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 xl:grid-cols-3';
 
   return (
-    <Layout>
-      <section className="py-12 md:py-20">
-        <div className="container max-w-6xl">
-          <BlogBreadcrumb items={[
-            { label: t('blog.home'), href: '/' },
-            { label: t('nav.about'), href: '/about' },
-            { label: c.title },
-          ]} />
-
-          <header className="mb-10 max-w-2xl">
-            <h1 className="font-display text-4xl font-bold leading-tight text-foreground md:text-5xl">{c.title}</h1>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">{c.subtitle}</p>
+    <section aria-labelledby="management-title" className="mt-4">
+      <div>
+          <header className="mb-8 max-w-2xl">
+            <h2 id="management-title" className="font-display text-3xl font-bold leading-tight text-foreground md:text-4xl">{c.title}</h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">{c.subtitle}</p>
           </header>
 
           {/* Директор */}
@@ -155,10 +141,7 @@ const Management = () => {
               </ul>
             </section>
           )}
-        </div>
-      </section>
-    </Layout>
+      </div>
+    </section>
   );
 };
-
-export default Management;

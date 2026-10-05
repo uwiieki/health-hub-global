@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index";
@@ -12,7 +12,6 @@ import DoctorDetail from "./pages/DoctorDetail";
 import LeaderDetail from "./pages/LeaderDetail";
 import News from "./pages/News";
 import About from "./pages/About";
-import Management from "./pages/Management";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Contacts from "./pages/Contacts";
@@ -50,7 +49,7 @@ const App = () => (
               <Route path="/blog-rukovoditelya" element={<Blog />} />
               <Route path="/blog-rukovoditelya/:slug" element={<BlogPost />} />
               <Route path="/about" element={<About />} />
-              <Route path="/about/management" element={<Management />} />
+              <Route path="/about/management" element={<Navigate to="/about" replace />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/legal-acts" element={<LegalActs />} />
               <Route path="/privacy" element={<Privacy />} />
