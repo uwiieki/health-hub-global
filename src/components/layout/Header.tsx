@@ -27,15 +27,20 @@ export const Header = () => {
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
-  const navLinks = [
+  const navLinks: { href: string; label: string; prefix?: boolean }[] = [
     { href: '/', label: t('nav.home') },
     { href: '/news', label: t('nav.news') },
     { href: '/doctors', label: t('nav.doctors') },
     { href: '/services', label: t('nav.services') },
     { href: '/legal-acts', label: t('nav.legalActs') },
+    { href: '/blog-rukovoditelya', label: t('nav.blog'), prefix: true },
     { href: '/contacts', label: t('nav.contacts') },
     { href: '/about', label: t('nav.about') },
   ];
+
+  // Пункт с prefix остаётся активным и на вложенных страницах (/blog-rukovoditelya/:slug)
+  const isActive = (link: { href: string; prefix?: boolean }) =>
+    link.prefix ? location.pathname.startsWith(link.href) : location.pathname === link.href;
 
   const currentLang = languages.find((l) => l.code === language) || languages[0];
 
@@ -92,14 +97,14 @@ export const Header = () => {
 
       <div className="container flex h-14 items-center justify-between">
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex lg:items-center lg:gap-1">
+        <nav className="hidden lg:flex lg:items-center lg:gap-0 xl:gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
               className={cn(
-                'whitespace-nowrap rounded-md px-3 py-2 text-[15px] font-semibold transition-colors hover:bg-secondary hover:text-primary xl:px-4 xl:text-base',
-                location.pathname === link.href
+                'whitespace-nowrap rounded-md px-1.5 py-2 text-sm font-semibold transition-colors hover:bg-secondary hover:text-primary xl:px-4 xl:text-base',
+                isActive(link)
                   ? 'text-primary bg-secondary/80'
                   : 'text-foreground/80'
               )}
@@ -166,7 +171,7 @@ export const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
                     'px-4 py-3 text-base font-medium transition-colors rounded-md',
-                    location.pathname === link.href
+                    isActive(link)
                       ? 'text-primary bg-secondary'
                       : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
                   )}

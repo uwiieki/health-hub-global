@@ -1,6 +1,6 @@
 import { useAuth } from '@/contexts/AuthContext';
 import { Navigate, Link, useLocation, Outlet } from 'react-router-dom';
-import { LayoutDashboard, Stethoscope, Users, Newspaper, LogOut, Image, FileText } from 'lucide-react';
+import { LayoutDashboard, Stethoscope, Users, Newspaper, LogOut, Image, FileText, PenLine } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -10,6 +10,7 @@ const navItems = [
   { href: '/admin/doctors', label: 'Врачи', icon: Users },
   { href: '/admin/news', label: 'Новости', icon: Newspaper },
   { href: '/admin/legal-acts', label: 'НПА', icon: FileText },
+  { href: '/admin/blog', label: 'Блог', icon: PenLine },
   { href: '/admin/media', label: 'Медиа', icon: Image },
 ];
 

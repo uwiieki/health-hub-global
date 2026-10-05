@@ -14,6 +14,96 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_posts: {
+        Row: {
+          content_en: string
+          content_kz: string
+          content_ru: string
+          cover_image_url: string | null
+          created_at: string
+          excerpt_en: string
+          excerpt_kz: string
+          excerpt_ru: string
+          id: string
+          publish_date: string
+          slug: string
+          status: string
+          title_en: string
+          title_kz: string
+          title_ru: string
+          updated_at: string
+        }
+        Insert: {
+          content_en?: string
+          content_kz?: string
+          content_ru?: string
+          cover_image_url?: string | null
+          created_at?: string
+          excerpt_en?: string
+          excerpt_kz?: string
+          excerpt_ru?: string
+          id?: string
+          publish_date?: string
+          slug: string
+          status?: string
+          title_en?: string
+          title_kz?: string
+          title_ru?: string
+          updated_at?: string
+        }
+        Update: {
+          content_en?: string
+          content_kz?: string
+          content_ru?: string
+          cover_image_url?: string | null
+          created_at?: string
+          excerpt_en?: string
+          excerpt_kz?: string
+          excerpt_ru?: string
+          id?: string
+          publish_date?: string
+          slug?: string
+          status?: string
+          title_en?: string
+          title_kz?: string
+          title_ru?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      director_messages: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          ip_hash: string
+          mail_sent: boolean
+          message: string
+          name: string
+          phone: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          ip_hash?: string
+          mail_sent?: boolean
+          message: string
+          name: string
+          phone?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          ip_hash?: string
+          mail_sent?: boolean
+          message?: string
+          name?: string
+          phone?: string
+        }
+        Relationships: []
+      }
       doctors: {
         Row: {
           bio_en: string

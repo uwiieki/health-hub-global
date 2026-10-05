@@ -1,1 +1,3 @@
 project_id = "vprwthzwfgqssiqawqau"
+[functions.send-director-message]
+verify_jwt = false

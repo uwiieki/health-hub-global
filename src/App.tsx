@@ -12,6 +12,8 @@ import DoctorDetail from "./pages/DoctorDetail";
 import LeaderDetail from "./pages/LeaderDetail";
 import News from "./pages/News";
 import About from "./pages/About";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Contacts from "./pages/Contacts";
 import LegalActs from "./pages/LegalActs";
 import Privacy from "./pages/Privacy";
@@ -25,6 +27,7 @@ import DoctorsAdmin from "./pages/admin/DoctorsAdmin";
 import NewsAdmin from "./pages/admin/NewsAdmin";
 import MediaAdmin from "./pages/admin/MediaAdmin";
 import LegalActsAdmin from "./pages/admin/LegalActsAdmin";
+import BlogAdmin from "./pages/admin/BlogAdmin";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +46,8 @@ const App = () => (
               <Route path="/doctors/:id" element={<DoctorDetail />} />
               <Route path="/leaders/:id" element={<LeaderDetail />} />
               <Route path="/news" element={<News />} />
+              <Route path="/blog-rukovoditelya" element={<Blog />} />
+              <Route path="/blog-rukovoditelya/:slug" element={<BlogPost />} />
               <Route path="/about" element={<About />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/legal-acts" element={<LegalActs />} />
@@ -55,6 +60,7 @@ const App = () => (
                 <Route path="doctors" element={<DoctorsAdmin />} />
                 <Route path="news" element={<NewsAdmin />} />
                 <Route path="legal-acts" element={<LegalActsAdmin />} />
+                <Route path="blog" element={<BlogAdmin />} />
                 <Route path="media" element={<MediaAdmin />} />
               </Route>
               <Route path="*" element={<NotFound />} />
