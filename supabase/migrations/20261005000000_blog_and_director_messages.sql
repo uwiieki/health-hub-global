@@ -1,8 +1,3 @@
--- Блог руководителя: публикации и обращения к руководителю
-
--- =========================================================
--- 1. Публикации блога
--- =========================================================
 CREATE TABLE public.blog_posts (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
   slug TEXT NOT NULL UNIQUE,
@@ -12,7 +7,6 @@ CREATE TABLE public.blog_posts (
   excerpt_ru TEXT NOT NULL DEFAULT '',
   excerpt_kz TEXT NOT NULL DEFAULT '',
   excerpt_en TEXT NOT NULL DEFAULT '',
-  -- Текст публикации: абзацы разделяются пустой строкой
   content_ru TEXT NOT NULL DEFAULT '',
   content_kz TEXT NOT NULL DEFAULT '',
   content_en TEXT NOT NULL DEFAULT '',
@@ -50,11 +44,7 @@ CREATE TRIGGER update_blog_posts_updated_at
 BEFORE UPDATE ON public.blog_posts
 FOR EACH ROW EXECUTE FUNCTION public.update_updated_at_column();
 
--- =========================================================
--- 2. Обращения к руководителю
---    Пишет ТОЛЬКО Edge Function (service role), публичного доступа нет.
---    Читать и удалять могут администраторы.
--- =========================================================
+
 CREATE TABLE public.director_messages (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
@@ -79,11 +69,7 @@ CREATE POLICY "Admins can delete director_messages"
 ON public.director_messages FOR DELETE TO authenticated
 USING (is_admin());
 
--- =========================================================
--- 3. Первая публикация
---    Подпись (ФИО и должность директора) выводится на сайте автоматически,
---    поэтому в тексте её нет.
--- =========================================================
+
 INSERT INTO public.blog_posts (slug, title_ru, excerpt_ru, content_ru, publish_date, status)
 VALUES (
   'o-razvitii-sportivnoy-meditsiny',
