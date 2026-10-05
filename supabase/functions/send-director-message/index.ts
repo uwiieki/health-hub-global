@@ -7,7 +7,7 @@
 // SUPABASE_URL и SUPABASE_SERVICE_ROLE_KEY Supabase подставляет автоматически.
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.49.4';
-import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
+import nodemailer from 'npm:nodemailer@6.9.16';
 import { escapeHtml, LIMITS, sanitizeLine, validateInput } from './validation.ts';
 
 const corsHeaders = {
@@ -112,16 +112,17 @@ Deno.serve(async (req) => {
   const text = `Новое обращение к руководителю\n\nИмя: ${name}\nТелефон: ${phone || '—'}\nE-mail: ${email}\n\nСообщение:\n${message}\n`;
 
   const secure = env('MAIL_SECURE') ? env('MAIL_SECURE') === 'true' : port === 465;
-  const client = new SMTPClient({
-    connection: { hostname: host, port, tls: secure, auth: { username: user, password: pass } },
+  const transporter = nodemailer.createTransport({
+    host, port, secure,
+    auth: { user, pass },
   });
   try {
-    await client.send({
+    await transporter.sendMail({
       from,
       to,
       replyTo: email,
       subject: `Обращение к руководителю: ${name}`.slice(0, 150),
-      content: text,
+      text,
       html,
     });
     await supabase.from('director_messages').update({ mail_sent: true }).eq('id', saved.id);
@@ -129,7 +130,5 @@ Deno.serve(async (req) => {
   } catch (e) {
     console.error('mail send failed', e);
     return json(502, { error: 'mail_failed' });
-  } finally {
-    try { await client.close(); } catch { /* ignore */ }
   }
 });
