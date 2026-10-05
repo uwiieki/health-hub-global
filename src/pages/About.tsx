@@ -83,7 +83,7 @@ const About = () => {
             <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
               {c.leadershipTitle}
             </h2>
-            <div className="grid gap-8 lg:grid-cols-3">
+            <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:[&:has(>:nth-child(2):last-child)]:grid-cols-2 lg:[&:has(>:nth-child(2):last-child)]:max-w-3xl">
               {leadership.map((person) => (
                 <Link key={person.id} to={`/leaders/${person.id}`} className="group">
                   <Card className="border-border/50 bg-card overflow-hidden transition-all duration-300 hover:shadow-card h-full">

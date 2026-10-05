@@ -81,6 +81,20 @@ const LeaderDetail = () => {
                   </Card>
                 </div>
 
+                {leader.biography && (
+                  <Card className="border-border/50">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <User className="h-6 w-6 text-primary" />
+                        <h2 className="font-display text-lg font-semibold text-foreground">
+                          {language === 'kz' ? 'Өмірбаяны' : language === 'en' ? 'Biography' : 'Биография'}
+                        </h2>
+                      </div>
+                      <p className="text-muted-foreground whitespace-pre-line leading-relaxed">{tr(leader.biography)}</p>
+                    </CardContent>
+                  </Card>
+                )}
+
                 <Card className="border-border/50">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-3">
