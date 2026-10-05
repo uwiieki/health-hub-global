@@ -71,3 +71,15 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Блог руководителя и форма «Обращение к руководителю»
+
+Письма отправляет Supabase Edge Function `send-director-message` (почтовые данные не хранятся в коде).
+
+1. Применить миграцию `supabase/migrations/20261005000000_blog_and_director_messages.sql` (`supabase db push` или SQL Editor).
+2. Задать секреты:
+   `supabase secrets set MAIL_HOST=... MAIL_PORT=465 MAIL_USER=... MAIL_PASSWORD=... DIRECTOR_EMAIL=...`
+   (необязательно: `MAIL_FROM`, `MAIL_SECURE=true|false`, `IP_HASH_SALT`).
+3. Задеплоить функцию: `supabase functions deploy send-director-message`.
+
+Публикации блога редактируются в админке: `/admin/blog` (там же список полученных обращений).
