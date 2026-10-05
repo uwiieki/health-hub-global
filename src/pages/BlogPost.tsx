@@ -19,7 +19,8 @@ const BlogPost = () => {
   const { posts, loading, error } = useBlogPosts();
 
   // Список отсортирован от новых к старым: «следующая» запись — более новая, «предыдущая» — более старая
-  const index = posts.findIndex((p) => p.slug === slug);
+  // Без slug (страница /blog-rukovoditelya) сразу открывается последняя запись
+  const index = slug ? posts.findIndex((p) => p.slug === slug) : posts.length > 0 ? 0 : -1;
   const post = index >= 0 ? posts[index] : null;
   const newer = index > 0 ? posts[index - 1] : null;
   const older = index >= 0 && index < posts.length - 1 ? posts[index + 1] : null;
@@ -45,6 +46,9 @@ const BlogPost = () => {
         </Layout>
       );
     }
+    if (!slug) {
+      return <Layout><p className="py-24 text-center text-muted-foreground">{t('blog.empty')}</p></Layout>;
+    }
     return <NotFound />;
   }
 
@@ -56,8 +60,9 @@ const BlogPost = () => {
         <div className="container max-w-4xl">
           <BlogBreadcrumb items={[
             { label: t('blog.home'), href: '/' },
-            { label: t('blog.title'), href: '/blog-rukovoditelya' },
-            { label: title },
+            ...(slug
+              ? [{ label: t('blog.title'), href: '/blog-rukovoditelya' }, { label: title }]
+              : [{ label: t('blog.title') }]),
           ]} />
 
           <article>
@@ -102,7 +107,7 @@ const BlogPost = () => {
 
           <div className="mt-12"><DirectorMessageForm /></div>
 
-          <nav aria-label="Навигация по записям" className="mt-10 grid gap-4 sm:grid-cols-2">
+          {(older || newer) && <nav aria-label="Навигация по записям" className="mt-10 grid gap-4 sm:grid-cols-2">
             {older ? (
               <Link to={`/blog-rukovoditelya/${older.slug}`}
                 className="group flex min-w-0 flex-col gap-1 rounded-[22px] border border-primary/10 bg-white/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
@@ -121,11 +126,8 @@ const BlogPost = () => {
                 <span className="line-clamp-2 break-words font-display font-bold text-foreground">{getPostTitle(newer, language)}</span>
               </Link>
             ) : null}
-          </nav>
+          </nav>}
 
-          <div className="mt-6 text-center">
-            <Link to="/blog-rukovoditelya" className="text-sm font-medium text-primary hover:underline">{t('blog.all')}</Link>
-          </div>
         </div>
       </section>
     </Layout>
