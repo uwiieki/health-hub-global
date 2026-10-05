@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Target, Building, User } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 import { leaders } from '@/data/leaders';
 
 const leadership = leaders;
@@ -106,6 +108,14 @@ const About = () => {
                   </Card>
                 </Link>
               ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Button asChild variant="outline" className="gap-2">
+                <Link to="/about/management">
+                  {language === 'kz' ? 'Басшылық беті' : language === 'en' ? 'Leadership page' : 'Страница «Руководство»'}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

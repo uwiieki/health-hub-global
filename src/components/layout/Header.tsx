@@ -35,7 +35,7 @@ export const Header = () => {
     { href: '/legal-acts', label: t('nav.legalActs') },
     { href: '/blog-rukovoditelya', label: t('nav.blog'), prefix: true },
     { href: '/contacts', label: t('nav.contacts') },
-    { href: '/about', label: t('nav.about') },
+    { href: '/about', label: t('nav.about'), prefix: true },
   ];
 
   // Пункт с prefix остаётся активным и на вложенных страницах (/blog-rukovoditelya/:slug)
