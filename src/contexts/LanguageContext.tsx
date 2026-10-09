@@ -98,7 +98,7 @@ const translations: Record<Language, Record<string, string>> = {
     'doctors.experience': 'лет опыта',
     
     // News
-    'news.title': 'Новости и статьи',
+    'news.title': 'Новости',
     'news.subtitle': 'Полезная информация о здоровье',
     'news.homeTitle': 'Новости',
     'news.homeSubtitle': 'Полезная информация о здоровье, спортивной медицине и жизни центра.',
@@ -257,7 +257,7 @@ const translations: Record<Language, Record<string, string>> = {
     'doctors.experience': 'жыл тәжірибе',
     
     // News
-    'news.title': 'Жаңалықтар мен мақалалар',
+    'news.title': 'Жаңалықтар',
     'news.subtitle': 'Денсаулық туралы пайдалы ақпарат',
     'news.homeTitle': 'Жаңалықтар',
     'news.homeSubtitle': 'Денсаулық, спорттық медицина және орталық өмірі туралы пайдалы ақпарат.',
@@ -416,7 +416,7 @@ const translations: Record<Language, Record<string, string>> = {
     'doctors.experience': 'years experience',
     
     // News
-    'news.title': 'News & Articles',
+    'news.title': 'News',
     'news.subtitle': 'Useful health information',
     'news.homeTitle': 'News',
     'news.homeSubtitle': 'Useful information about health, sports medicine and the life of the center.',
