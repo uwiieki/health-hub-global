@@ -1,3 +1,4 @@
+import { usePageMeta } from '@/hooks/usePageMeta';
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
@@ -5,6 +6,7 @@ import { Target, Building } from 'lucide-react';
 import { ManagementSection } from '@/components/about/ManagementSection';
 
 const About = () => {
+  usePageMeta({ title: 'О нас — Центр спортивной медицины Актюбинской области', description: 'О Центре спортивной медицины Актюбинской области: история, миссия и руководство.' });
   const { t, language } = useLanguage();
 
   const content = {

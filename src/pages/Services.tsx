@@ -1,3 +1,4 @@
+import { usePageMeta } from '@/hooks/usePageMeta';
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
@@ -15,6 +16,7 @@ interface Service {
 }
 
 const Services = () => {
+  usePageMeta({ title: 'Услуги — Центр спортивной медицины Актюбинской области', description: 'Услуги Центра спортивной медицины в Актобе: осмотры, диагностика, реабилитация и восстановление спортсменов.' });
   const { t, language } = useLanguage();
   const [services, setServices] = useState<Service[]>([]);
   const [selectedCategory, setSelectedCategory] = useState('all');

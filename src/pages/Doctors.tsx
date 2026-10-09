@@ -1,3 +1,4 @@
+import { usePageMeta } from '@/hooks/usePageMeta';
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
@@ -16,6 +17,7 @@ interface Doctor {
 }
 
 const Doctors = () => {
+  usePageMeta({ title: 'Специалисты — Центр спортивной медицины Актюбинской области', description: 'Врачи и специалисты Центра спортивной медицины Актюбинской области.' });
   const { t, language } = useLanguage();
   const [doctors, setDoctors] = useState<Doctor[]>([]);
   const [selectedSpec, setSelectedSpec] = useState('all');

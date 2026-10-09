@@ -1,3 +1,4 @@
+import { usePageMeta } from '@/hooks/usePageMeta';
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
@@ -9,6 +10,7 @@ import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 
 const Contacts = () => {
+  usePageMeta({ title: 'Контакты — Центр спортивной медицины Актюбинской области', description: 'Адрес, телефон и e-mail Центра спортивной медицины Актюбинской области в г. Актобе, режим работы.' });
   const { t } = useLanguage();
   const contactInfo = [
     { icon: MapPin, labelKey: 'contact.address', value: t('contact.address.value') },

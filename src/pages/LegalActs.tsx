@@ -1,3 +1,4 @@
+import { usePageMeta } from '@/hooks/usePageMeta';
 import { useEffect, useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -40,6 +41,7 @@ const content = {
 };
 
 const LegalActs = () => {
+  usePageMeta({ title: 'Нормативно-правовые акты — Центр спортивной медицины Актюбинской области', description: 'Нормативно-правовые акты и документы Центра спортивной медицины Актюбинской области.' });
   const { language } = useLanguage();
   const c = content[language];
   const [acts, setActs] = useState<LegalAct[]>([]);
