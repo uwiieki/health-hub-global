@@ -6,6 +6,8 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { Link } from 'react-router-dom';
+import { formatNewsDate } from '@/lib/formatDate';
 
 interface NewsItem {
   id: string;
@@ -33,12 +35,7 @@ const News = () => {
   const getTitle = (n: NewsItem) => language === 'kz' ? n.title_kz : language === 'en' ? n.title_en : n.title_ru;
   const getContent = (n: NewsItem) => language === 'kz' ? n.content_kz : language === 'en' ? n.content_en : n.content_ru;
 
-  const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString(language === 'en' ? 'en-US' : language === 'kz' ? 'kk-KZ' : 'ru-RU', {
-      year: 'numeric', month: 'long', day: 'numeric',
-    });
-  };
+  const formatDate = (dateStr: string) => formatNewsDate(dateStr, language);
 
   return (
     <Layout>
@@ -56,22 +53,31 @@ const News = () => {
           ) : (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {news.map((item) => (
-                <Card key={item.id} className="group overflow-hidden border-border/50 bg-card transition-all duration-300 hover:shadow-card">
-                  {item.cover_image_url && (
-                    <div className="relative aspect-video overflow-hidden">
-                      <img src={item.cover_image_url} alt={getTitle(item)} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                      <Badge className="absolute left-4 top-4 bg-primary/90">{item.category}</Badge>
-                    </div>
-                  )}
-                  <CardContent className="p-6">
-                    <div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      <span>{formatDate(item.publish_date)}</span>
-                    </div>
-                    <h3 className="font-display text-xl font-semibold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">{getTitle(item)}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{getContent(item).substring(0, 150)}...</p>
-                  </CardContent>
-                </Card>
+                <Link key={item.id} to={`/news/${item.id}`} className="group block h-full">
+                  <Card className="h-full overflow-hidden border-border/50 bg-card transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-card">
+                    {item.cover_image_url && (
+                      <div className="relative aspect-video overflow-hidden">
+                        <img src={item.cover_image_url} alt={getTitle(item)} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <Badge className="absolute left-4 top-4 bg-primary/90">{item.category}</Badge>
+                      </div>
+                    )}
+                    <CardContent className="p-6">
+                      <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+                        {!item.cover_image_url && <Badge className="bg-primary/90">{item.category}</Badge>}
+                        <span className="flex items-center gap-2">
+                          <Calendar className="h-4 w-4" />
+                          {formatDate(item.publish_date)}
+                        </span>
+                      </div>
+                      <h3 className="font-display text-xl font-semibold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">{getTitle(item)}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{getContent(item)}</p>
+                      <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                        {language === 'kz' ? 'Толығырақ' : language === 'en' ? 'Read more' : 'Подробнее'}
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           )}

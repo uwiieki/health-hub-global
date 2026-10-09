@@ -12,6 +12,7 @@ import Doctors from "./pages/Doctors";
 import DoctorDetail from "./pages/DoctorDetail";
 import LeaderDetail from "./pages/LeaderDetail";
 import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -48,6 +49,7 @@ const App = () => (
               <Route path="/doctors/:id" element={<DoctorDetail />} />
               <Route path="/leaders/:id" element={<LeaderDetail />} />
               <Route path="/news" element={<News />} />
+              <Route path="/news/:id" element={<NewsDetail />} />
               <Route path="/blog-rukovoditelya" element={<Blog />} />
               <Route path="/blog-rukovoditelya/:slug" element={<BlogPost />} />
               <Route path="/about" element={<About />} />

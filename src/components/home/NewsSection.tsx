@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { formatNewsDate } from '@/lib/formatDate';
 
 interface NewsItem {
   id: string;
@@ -28,12 +29,7 @@ export const NewsSection = () => {
     return (content || '').substring(0, 160);
   };
 
-  const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString(language === 'en' ? 'en-US' : language === 'kz' ? 'kk-KZ' : 'ru-RU', {
-      year: 'numeric', month: 'long', day: 'numeric',
-    });
-  };
+  const formatDate = (dateStr: string) => formatNewsDate(dateStr, language);
 
   if (news.length === 0) return null;
 
@@ -100,7 +96,7 @@ export const NewsSection = () => {
             <div className={`grid min-w-0 gap-4 ${rest.length > 0 ? 'xl:grid-cols-[11fr_9fr]' : ''}`}>
               {/* Главная новость */}
               <Link
-                to="/news"
+                to={`/news/${main.id}`}
                 className={`group flex min-w-0 flex-col overflow-hidden rounded-[22px] border border-primary/10 bg-white/90 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card md:flex-row ${rest.length > 0 ? 'xl:flex-col' : ''}`}
               >
                 <div className={`aspect-[16/9] overflow-hidden md:aspect-auto md:w-1/2 md:shrink-0 ${rest.length > 0 ? 'xl:aspect-[16/9] xl:w-auto' : ''}`}>
@@ -134,7 +130,7 @@ export const NewsSection = () => {
                   {rest.map((item) => (
                     <Link
                       key={item.id}
-                      to="/news"
+                      to={`/news/${item.id}`}
                       className="group flex min-w-0 flex-col overflow-hidden rounded-[22px] border border-primary/10 bg-white/90 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-card xl:flex-row"
                     >
                       <div className="aspect-[16/9] shrink-0 overflow-hidden md:aspect-[2/1] xl:aspect-auto xl:w-2/5">

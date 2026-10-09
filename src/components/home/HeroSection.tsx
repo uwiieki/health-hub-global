@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { formatNewsDate } from '@/lib/formatDate';
 import { Link } from 'react-router-dom';
 
 interface NewsItem {
@@ -43,7 +44,7 @@ export const HeroSection = () => {
     const c = language === 'kz' ? n.content_kz : language === 'en' ? n.content_en : n.content_ru;
     return c?.substring(0, 150) || '';
   };
-  const formatDate = (d: string) => new Date(d).toLocaleDateString(language === 'en' ? 'en-US' : language === 'kz' ? 'kk-KZ' : 'ru-RU', { year: 'numeric', month: 'long', day: 'numeric' });
+  const formatDate = (d: string) => formatNewsDate(d, language);
 
   useEffect(() => {
     const pageSlides: CarouselSlide[] = [
@@ -77,7 +78,7 @@ export const HeroSection = () => {
       type: 'news' as const, id: item.id,
       title: getTitle(item),
       description: getExcerpt(item),
-      link: '/news', linkLabel: language === 'kz' ? 'Толығырақ' : language === 'en' ? 'Read more' : 'Подробнее',
+      link: `/news/${item.id}`, linkLabel: language === 'kz' ? 'Толығырақ' : language === 'en' ? 'Read more' : 'Подробнее',
       icon: <Newspaper className="h-8 w-8" />,
       bgGradient: 'from-primary/10 via-transparent to-transparent',
       imageUrl: item.cover_image_url,
