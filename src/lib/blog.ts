@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { fallbackBlogPosts } from '@/data/blogPosts';
+import { formatNewsDate } from '@/lib/formatDate';
 
 export interface BlogPost {
   id: string;
@@ -14,10 +15,12 @@ export interface BlogPost {
 
 type Lang = 'ru' | 'kz' | 'en';
 
-// Если перевод не заполнен — показываем русский вариант
-const pick = (post: BlogPost, field: 'title' | 'excerpt' | 'content', lang: Lang) =>
-  ((post as unknown as Record<string, string>)[`${field}_${lang}`] || '').trim() ||
-  ((post as unknown as Record<string, string>)[`${field}_ru`] || '');
+// Если перевод в базе не заполнен — берём встроенный перевод (по slug), затем русский вариант
+const pick = (post: BlogPost, field: 'title' | 'excerpt' | 'content', lang: Lang) => {
+  const get = (p: BlogPost, l: Lang) => ((p as unknown as Record<string, string>)[`${field}_${l}`] || '').trim();
+  const builtIn = fallbackBlogPosts.find((f) => f.slug === post.slug);
+  return get(post, lang) || (builtIn ? get(builtIn, lang) : '') || get(post, 'ru');
+};
 
 export const getPostTitle = (p: BlogPost, lang: Lang) => pick(p, 'title', lang);
 export const getPostExcerpt = (p: BlogPost, lang: Lang) => {
@@ -29,10 +32,7 @@ export const getPostParagraphs = (p: BlogPost, lang: Lang) =>
   pick(p, 'content', lang).split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean);
 
 export const formatPostDate = (dateStr: string, lang: Lang) =>
-  new Date(dateStr + 'T00:00:00').toLocaleDateString(
-    lang === 'en' ? 'en-US' : lang === 'kz' ? 'kk-KZ' : 'ru-RU',
-    { year: 'numeric', month: 'long', day: 'numeric' }
-  );
+  formatNewsDate(dateStr + 'T00:00:00', lang);
 
 /** Список опубликованных записей (новые первыми). */
 export const useBlogPosts = () => {
