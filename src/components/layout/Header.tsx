@@ -55,10 +55,7 @@ export const Header = () => {
               <img src={logoSport} alt="Управление спорта и туризма" className="h-14 w-14 rounded-full object-contain md:h-16 md:w-16" />
               <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-14 w-14 rounded-full object-contain md:h-16 md:w-16" />
             </div>
-            <h1 className={cn(
-              'font-display text-xs leading-tight md:text-lg lg:text-xl uppercase tracking-wide text-foreground',
-              language === 'kz' ? 'font-medium normal-case tracking-normal' : 'font-bold'
-            )}>
+            <h1 className="font-display text-xs font-bold leading-tight md:text-lg lg:text-xl uppercase tracking-wide text-foreground">
               {t('org.name')}
             </h1>
           </Link>

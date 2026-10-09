@@ -3,6 +3,12 @@ import { Phone, Mail, MapPin, Clock, Instagram, MessageCircle, Music2 } from 'lu
 import logoImg from '@/assets/logo-round.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+const footerServices = {
+  ru: ['Терапия', 'Кардиология', 'Неврология', 'Педиатрия', 'Стоматология'],
+  kz: ['Терапия', 'Кардиология', 'Неврология', 'Педиатрия', 'Стоматология'],
+  en: ['Therapy', 'Cardiology', 'Neurology', 'Pediatrics', 'Dentistry'],
+};
+
 export const Footer = () => {
   const { t, language } = useLanguage();
 
@@ -15,7 +21,7 @@ export const Footer = () => {
             <Link to="/" className="flex items-center gap-3">
               <img src={logoImg} alt="ЦСМ Актюбинской области" className="h-10 w-10 rounded-full object-contain" />
               <div>
-                <h3 className={`font-display text-sm text-foreground leading-tight ${language === 'kz' ? 'font-medium' : 'font-semibold'}`}>{t('org.short')}</h3>
+                <h3 className="font-display text-sm font-semibold text-foreground leading-tight">{t('org.short')}</h3>
                 <p className="text-xs text-muted-foreground">{t('org.region')}</p>
               </div>
             </Link>
@@ -59,7 +65,7 @@ export const Footer = () => {
               {t('nav.services')}
             </h4>
             <ul className="space-y-2">
-              {['Терапия', 'Кардиология', 'Неврология', 'Педиатрия', 'Стоматология'].map(
+              {footerServices[language].map(
                 (item) => (
                   <li key={item}>
                     <Link
@@ -83,7 +89,7 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
                 <span className="text-sm text-muted-foreground">
-                  г. Актобе, ул. Бейбітшілік 45
+                  {t('contact.address.value')}
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -107,7 +113,7 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
                 <div className="text-sm text-muted-foreground">
-                  <p>Пн-Пт: 09:00 - 18:00</p>
+                  <p>{t('contact.hours.value')}</p>
                 </div>
               </li>
             </ul>
