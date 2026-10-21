@@ -3,11 +3,11 @@ export interface Leader {
   role: { ru: string; kz: string; en: string };
   name: { ru: string; kz: string; en: string };
   desc: { ru: string; kz: string; en: string };
-  education: { ru: string; kz: string; en: string };
-  qualification: { ru: string; kz: string; en: string };
-  experience: { ru: string; kz: string; en: string };
+  education?: { ru: string; kz: string; en: string };
+  qualification?: { ru: string; kz: string; en: string };
+  experience?: { ru: string; kz: string; en: string };
   biography?: { ru: string; kz: string; en: string };
-  experienceYears: number;
+  experienceYears?: number;
   /** Путь к фото, напр. '/images/management/director.jpg' (файл положить в public/images/management/). Пока null — показывается заглушка. */
   photoUrl?: string | null;
   quote?: { ru: string; kz: string; en: string };
@@ -63,31 +63,15 @@ export const leaders: Leader[] = [
     id: 'tolegenova',
     role: { ru: 'Заместитель директора по административно-экономическим вопросам', kz: 'Әкімшілік-экономикалық мәселелер жөніндегі директордың орынбасары', en: 'Deputy Director for Administrative and Economic Affairs' },
     name: {
-      ru: 'Толегенова Динара Ерлановна',
-      kz: 'Төлегенова Динара Ерланқызы',
-      en: 'Dinara Y. Tolegenova',
+      ru: 'Бекмуханбет Салтанат',
+      kz: 'Бекмуханбет Салтанат',
+      en: 'Saltanat Bekmukhanbet',
     },
     desc: {
       ru: 'Заместитель по административно-экономическим вопросам центра спортивной медицины.',
       kz: 'Спорттық медицина орталығының әкімшілік-экономикалық мәселелер жөніндегі орынбасары.',
       en: 'Deputy for administrative and economic affairs of the Sports Medicine Center.',
     },
-    education: {
-      ru: 'Высшее медицинское образование, специальность «Общественное здравоохранение».',
-      kz: 'Жоғары медициналық білім, «Қоғамдық денсаулық сақтау» мамандығы.',
-      en: 'Higher medical education, Public Health.',
-    },
-    qualification: {
-      ru: 'Организатор здравоохранения.',
-      kz: 'Денсаулық сақтау ұйымдастырушысы.',
-      en: 'Healthcare administrator.',
-    },
-    experience: {
-      ru: 'Многолетний опыт работы в управлении медицинскими учреждениями.',
-      kz: 'Медициналық мекемелерді басқарудағы көп жылдық тәжірибе.',
-      en: 'Many years of experience in healthcare management.',
-    },
-    experienceYears: 10,
     photoUrl: null,
     // phone / email заместителя можно добавить сюда — они появятся на карточке автоматически
   },

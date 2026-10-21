@@ -49,7 +49,9 @@ const LeaderDetail = () => {
                   <p className="mt-3 text-muted-foreground leading-relaxed">{tr(leader.desc)}</p>
                 </div>
 
+                {(leader.experienceYears != null || leader.qualification) && (
                 <div className="grid gap-4 sm:grid-cols-2">
+                  {leader.experienceYears != null && (
                   <Card className="border-border/50">
                     <CardContent className="p-6 flex items-start gap-4">
                       <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
@@ -65,7 +67,9 @@ const LeaderDetail = () => {
                       </div>
                     </CardContent>
                   </Card>
+                  )}
 
+                  {leader.qualification && (
                   <Card className="border-border/50">
                     <CardContent className="p-6 flex items-start gap-4">
                       <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
@@ -79,7 +83,9 @@ const LeaderDetail = () => {
                       </div>
                     </CardContent>
                   </Card>
+                  )}
                 </div>
+                )}
 
                 {leader.biography && (
                   <Card className="border-border/50">
@@ -95,6 +101,7 @@ const LeaderDetail = () => {
                   </Card>
                 )}
 
+                {leader.education && (
                 <Card className="border-border/50">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-3">
@@ -106,7 +113,9 @@ const LeaderDetail = () => {
                     <p className="text-muted-foreground whitespace-pre-line leading-relaxed">{tr(leader.education)}</p>
                   </CardContent>
                 </Card>
+                )}
 
+                {leader.experience && (
                 <Card className="border-border/50">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-3">
@@ -118,6 +127,7 @@ const LeaderDetail = () => {
                     <p className="text-muted-foreground whitespace-pre-line leading-relaxed">{tr(leader.experience)}</p>
                   </CardContent>
                 </Card>
+                )}
               </div>
             </div>
           )}
